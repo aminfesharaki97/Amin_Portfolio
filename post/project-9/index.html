@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Predicting Full Power Output from a Combined Cycle Power Plant | Amin Fesharaki</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Uncovering the optimal model for prediction">
+    <meta name="generator" content="Hugo 0.101.0" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="https://aminfesharaki97.github.io/Amin_Portfolio/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Predicting Full Power Output from a Combined Cycle Power Plant" />
+<meta property="og:description" content="Uncovering the optimal model for prediction" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aminfesharaki97.github.io/Amin_Portfolio/post/project-9/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-06-27T11:00:59-04:00" />
+<meta property="article:modified_time" content="2022-06-27T11:00:59-04:00" /><meta property="og:site_name" content="Amin Fesharaki" />
+
+<meta itemprop="name" content="Predicting Full Power Output from a Combined Cycle Power Plant">
+<meta itemprop="description" content="Uncovering the optimal model for prediction"><meta itemprop="datePublished" content="2022-06-27T11:00:59-04:00" />
+<meta itemprop="dateModified" content="2022-06-27T11:00:59-04:00" />
+<meta itemprop="wordCount" content="3089">
+<meta itemprop="keywords" content="R," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Predicting Full Power Output from a Combined Cycle Power Plant"/>
+<meta name="twitter:description" content="Uncovering the optimal model for prediction"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  <header class="cover bg-top" style="background-image: url('https://aminfesharaki97.github.io/Amin_Portfolio/images/PowerPlant.jpg');">
+    <div class="bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://aminfesharaki97.github.io/Amin_Portfolio/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Amin Fesharaki
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://aminfesharaki97.github.io/Amin_Portfolio/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://aminfesharaki97.github.io/Amin_Portfolio/code/" title="Code page">
+              Code
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://aminfesharaki97.github.io/Amin_Portfolio/post/" title="Projects page">
+              Projects
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+<div class="ananke-socials">
+  
+    <a href="https://www.linkedin.com/in/aminfesh" target="_blank" class="LinkedIn ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+    <a href="https://github.com/aminfesharaki97" target="_blank" class="Github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Predicting Full Power Output from a Combined Cycle Power Plant</h1>
+          
+            <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+              Uncovering the optimal model for prediction
+            </h2>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        PROJECTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Predicting Full Power Output from a Combined Cycle Power Plant</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2022-06-27T11:00:59-04:00">June 27, 2022</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p><strong>Summary</strong>:</p>
+<ul>
+<li>Exploratory data analysis, data pre-processing, modeling, and evaluated data from a combined cycle power plant.</li>
+<li>Linear and nonlinear regression models were built, optimized, and compared to find the optimal modeling strategy.</li>
+<li>Models include ordinary least squares, partial least squares, principle component analysis, penalized linear models, ridge and lasso regression, support vector machines, K-nearest neighbor multivariate adaptive regression splines, random forest, boosted and bagged trees, cubist regression, and neural network.</li>
+<li>Random forest tuned by out-of-bag estimates outpeformed all models with a root mean square error score of 3.17.</li>
+<li>An impressive 95% of variance in power output explained by temperature, pressure, humidity and exhaust vacuum pressure, using the top model.</li>
+</ul>
+<p><a href="https://github.com/aminfesharaki97/Predicting-Electrical-Output-in-Power-Plants">Link to GitHub Repository</a></p>
+<p><strong>Abstract</strong></p>
+<p>Predicting full load power available from a power plant, based on assumed or forecasted environmental or ambient conditions, has strong implications for improved operational efficiencies and profit from available megawatt hours.  This paper conducts a secondary data analysis, utilizing operating data from a combined cycle power plant over a six year period.  There are four main parameters (predictors) that influence power plant performance.  These parameters include ambient temperature, atmospheric pressure, relative humidity, and steam turbine exhaust pressure (vacuum). The data is used to build both linear and non-linear regression models that predict hourly full load electrical power from the combined cycle power plant.  Model performance is measured by mean absolute error (MAE), Root Mean Squared Error (RMSE), and R squared.  After analyzing the performance metrics on the test data set for each model used in this study, it was determined that Random Forest tuned by out-of-bag estimates yielded the best results. The final model used had a mtry value of 2 with an RMSE of 3.1709 and an R2 of .965 on the training data set. However, the performance metrics on the testing data sets had a slightly higher RMSE of 3.7197, a lower R2 of .952, and an MAE of 2.6460.  The Random Forest model tuned by out-of-bag estimates slightly outperformed the most successful model in Tufekci’s 2014 study while using the same feature subset. Furthermore, the prediction accuracy for the optimal machine learning model is suitable enough to replace thermodynamic approaches to model a real world system. By doing so, the time and effort to model thermodynamic systems analytics can be greatly reduced.  This data was compared to a 2014 study, which found the optimal model to be a bagging algorithm with REPTree (Tufekci, 2014).  The optimal model for this study slightly outperformed the 2014 study.</p>
+<p><strong>Problem Statement</strong></p>
+<p>Combined cycle power plants (CCPP) are thermodynamically complex systems.  By definition, they utilize more than one means to generate power, and one of the generators will use waste heat or energy from the other generator as its energy source for electric power generation.  This is advantageous due to the efficiencies gained.  For our analysis, we revisit a problem first explored by Tufecki (2014), who did a predictive analysis on a combined cycle power plant made up of two gas turbines (GT) and one steam turbine (ST).  Figure 1 shows a functional diagram of the combined cycle power plant under consideration.  Two GT generators output approximately 160 MW of electrical power each.  The exhaust from the GT generators is then run through steam generators as a heat source, creating high pressure steam that is used to power an ST generator.</p>
+<figure><img src="https://aminfesharaki97.github.io/Amin_Portfolio/images/1.png"/>
+</figure>
+
+<p>Predicting power plant electrical output provides benefits from both an economic and a plant efficiency perspective.  The opportunity to plan for and maximize output at least one day prior, as well as income from the available mega-watt hours is a desirable tool.  The problem, as Tufekci (2014) found, requires many assumptions to deal with the thermodynamic complexities that come with combined cycle power plants.  Without these assumptions, the machine learning problem would be much more challenging, and the thermodynamic analysis would require thousands of non-linear equations (Tufekci, 2014).  To avoid these complexities, Tafukci (2014) considered primarily, for GTs, the ambient parameters that impact performance, including ambient temperature, atmospheric pressure, and relative humidity.  ST generator performance has a relationship with exhaust vacuum, which will be utilized in this analysis.  Our goal for this analysis is to identify the optimal predictive model  for full power output from a CCPP, then compare optimal model performance to the study done by Tufekci, and determine if the modeling tools available in 2022 provide opportunities to create more effective predictive models to solve the same problem.</p>
+<p><strong>Exploratory Data Analysis</strong></p>
+<p>This effort is a secondary data analysis.  The data used was downloaded from the UCI Machine Learning Repository.  It consists of 5 variables (4 predictors and 1 target) and 9568 observations.  The predictor variables include ambient temperature (AT), atmospheric pressure (AP), relative humidity (RH), and steam turbine exhaust vacuum (V).  The target variable is full load electrical power output (PE).  The observations represent data collected from the CCPP over a six year period, each observation representing hourly measurements over the six year period.  Note, each observation represents maximum output of the CCPP, based on the conditions of that day.  Table 1 shows the descriptive statistics for the predictor and target variables.</p>
+<figure><img src="https://aminfesharaki97.github.io/Amin_Portfolio/images/2.png"/>
+</figure>
+
+<p>Our first step in exploring the data set was to check for any missing values that may require removal, imputation, or other actions to ensure they don’t inappropriately  influence or interfere with model development.  We found there were no missing values.  Further, we also found that the data in the predictor and target variable columns were numerical and continuous.  This lends itself well to regression models.</p>
+<p>Now that we understand the structure and quality of the data, we looked for relationships between variables, investigated the distributions, and looked for outliers that may influence model training.  Figure 2 shows the pairwise scatter plots of each predictor and the target variable.</p>
+<figure><img src="https://aminfesharaki97.github.io/Amin_Portfolio/images/3.png"/>
+</figure>
+
+<p>This shows linear relationships may exist between the PE and AT, as well as PE and V.  We verified this by checking the correlation between all variables.  The correlations were calculated to be -0.94 between PE/AT, and -0.87 between PE/V.  We also checked the distribution of the variables, using histograms, and looked for outliers using box plots.  Figure 3 shows the histograms of the predictor variables.  They generally follow a normal distribution, and do not appear skewed.  Vacuum (V) shows the least normal distribution, and will need to be addressed in preprocessing.</p>
+<figure><img src="https://aminfesharaki97.github.io/Amin_Portfolio/images/4.png"/>
+</figure>
+
+<p>The boxplots in figure 4 show very few outliers, but make it clear the variables are on very different scales, which will also need to be dealt with during preprocessing, before data splitting and model training.</p>
+<figure><img src="https://aminfesharaki97.github.io/Amin_Portfolio/images/5.png"/>
+</figure>
+
+<p><strong>Data Pre-Processing</strong></p>
+<p>To preprocess, we first checked for any near zero variance (degenerate)  predictors that may not add value to the model training.  We used the nearZeroVar() function in R, passed in the data set, and found there are not any degenerate predictors.  Next we checked for any highly correlated predictors, and found that AT and RH had a fairly strong correlation.  So strong we could potentially remove AT as a predictor.  This was confirmed by principal component (PC) analysis, which identified three PC’s that account for 95% of variance in the target.  However, the 2014 study included all of the predictors in the optimal model, so we also will for comparison.  We will investigate variable importance later on for the optimal model to validate whether AT should stay, or recommend removing in future analysis.</p>
+<p>The predictors were centered, scaled, and transformed using the Box Cox method, to prepare the data for model training.  This is done to improve numerical stability for many of the modeling calculations.  Many of the linear regression models are sensitive to the scale of predictors, while others, like tree based methods, are not.  The only real downside to centering, scaling, and transforming is the loss of interpretation of the data, as it will no longer be in its original units (Kuhn &amp; Johnson, 2013).  The output can be seen in the new boxplots, which show the data each having normal distributions and on the same scale in Figure 5.</p>
+<figure><img src="https://aminfesharaki97.github.io/Amin_Portfolio/images/6.png"/>
+</figure>
+
+<p><strong>Data Splitting</strong></p>
+<p>The data was split into training and test data sets, first by separating the predictors into “x” or independent variables, then the target variable (PE) as the “y” or independent variable.  The predictors were centered, scaled, and transformed after partitioning into training and test data sets.  We used the createDataPartition() function in R to create an 80/20 split of the data, where 80% of the 9568 observations were partitioned into the training set, and the remaining 20% were set aside as the test data set.</p>
+<p><strong>Modeling Strategies</strong></p>
+<p>A mix of regression modeling strategies was implemented for comparison of best model performance according to the lowest Root Mean Square Error (RMSE), Mean Absolute Error (MAE), highest R-squared values. Our goal was to produce a model that would best predict power output given our predictor variables and to see which predictor variables have the most influence on the full power output of the CCPP.</p>
+<p>With the data now pre-processed and partitioned, the training and testing variables created within the R-language code were incorporated into the various models for computation and analysis. We estimated the level of performance of the models by analyzing how it performed on data it has not yet seen, which is our test set of data. We used 10-fold cross validation as the resampling method across all models, in which data were partitioned into a training set of data and a test set of data. A random number seed of 100 was also used across all models for reproducibility of results. The algorithms used the training set of data to train the various machine learning models and to find their parameters. Then each model’s performance against the test set of data was evaluated.</p>
+<p>We also intended to evaluate if linear or non-linear models perform better.  If the data were linear then linear regression would have outperformed the non-linear models. On the contrary, if the data were non-linear, the non-linear models would outperform the linear regression model.</p>
+<p><strong>Validation and Testing</strong></p>
+<p>Several linear regression models were fitted to the data via R programming language in an attempt to match the pattern of the relationship between the predictor variables and the response variable. This category of models works best when the nature of the relationship between the predictor variables and the response variable is linear in nature, or rather, can be represented by a straight line on a graph whose algebraic equation uses the variable to the power of 1. They work by finding the straight line that produces the smallest amount of RSME, or x-axis distance between the data points and the regression line. Linear regression models tried were Ordinary Least Squares (OLS), Ridge, Lasso, ElasticNet, Partial Least Squares (PLS), Principal Component Regression (PCR), and OLS Principal Component Analysis (PCA). The linear model function was used as the training method for OLS and OLS PCA models. With the linear regression function we trained the model on the training data for the OLS model. We then used the resulting tuning variable to rank the variables in order of importance. For the Ridge model, the penalty variable of lambda was the tuning parameter.  We made a grid data frame of every combination of variables to use for tuning in the Ridge, ElasticNet, PLS and PCR models.</p>
+<p>Non-linear regression models used to model the data were Support Vector Machines (SVM) Radial, K-Nearest Neighbor (KNN), Neural Network, Multivariate Adaptive Regression Splines (MARS), and SVM Polynomial. The “earth” package was used to train the MARS model. The train function was used to tune the MARS model via external resampling.  We were also able to rank the variables in terms of importance according to the MARS model. For the KNN model, the k value was used for tuning grind in the train function. For SVM Radial and SVM Polynomial, the tuneLength argument uses 14 cost values as a default.</p>
+<p>Tree Regression models, which use multiple, long series of if-then statements for predictor variable values and corresponding response variable outcome values, were also applied to the data to determine if this style of modeling would produce results superior to those of the non-linear models. The Tree Regression models used on the data were Random Forest, Boosting, Cubist, Classification and Regression Tree (CART), and Bagged. With the Random Forest model we defined the number of trees. Similarly in the Bagged Trees model we defined the number of bags.</p>
+<p><strong>Results and Final Model Selection</strong></p>
+<p>Prediction accuracy using root mean-squared error (RMSE) will indicate the best performance models. RMSE is used to measure the difference between values predicted by the model and the values that are observed. In addition, 10-fold cross validation was used for all models. Moreover, linear, nonlinear, and tree regression models were used to analyze the data. With respect to the lower RMSE score,  tree and nonlinear regression models outperformed the linear regression models. The only exception was the bagged tree model as it was ranked lower than five linear models. Linear models include ordinary least squares, partial least squares,  principal component regression, and three penalized linear models: Lasso, Ridge, and Elastic Net. Support vector machines (radial and poly), multivariate adaptive regression splines, K-Nearest neighbors, and neural network made up the nonlinear regression models. Lastly, the tree regression models used were CART, random forest, boosting, bagged, and cubist.</p>
+<figure><img src="https://aminfesharaki97.github.io/Amin_Portfolio/images/7.png"/>
+</figure>
+
+<p>Table 2 indicates RMSE,  R2, and MAE for each model.  The range of the target variable (electrical power output) is 75.5 with a mean of 454.4. This indicates that all of the models have suitable RMSE values with the exception of the Ordinary Least Squares model using Principal Component Analysis. As shown in the table, nonlinear models outperform linear models, which indicates that the data should be considered nonlinear. If the data were linear, the linear models would outperform the other models. Moreover, Ordinary Least Squares yielded the best linear regression with an RMSE score of 4.664. The best nonlinear regression was the Support Vector Machine (SVM) with radial basis function kernel and a RMSE score of 4.061. For the SVM model,  the tuning parameter ‘sigma’ was held constant at a value of 0.4113507 with a C of 4. However, the best performing model was Random Forest which had the lowest RMSE score of 3.803. The data concludes that Random Forest models achieved the lowest RMSE and highest R2. Therefore, two additional models were built to see what variation of Random Forest was most optimal. The original model had no tuning and was set at 500 trees with 1 variable tried at each split.</p>
+<figure><img src="https://aminfesharaki97.github.io/Amin_Portfolio/images/8.png"/>
+</figure>
+
+<p>In addition, the Random Forest model was tuned using out-of-bag (OOB) estimates and using cross validation. Among all three Random Forest models, the one tuned using out-of-bag had the lowest RMSE with the highest R2 . Performance metric values on the test set are shown in Table 3. The OOB model was tuned to find the optimal mtry value; the final model used 500 trees with 2 variables tried at each split. In addition, the model explained 96.56% variance using these parameters.</p>
+<figure><img src="https://aminfesharaki97.github.io/Amin_Portfolio/images/9.png"/>
+</figure>
+
+<p>Variable importance gives insights on how much a specific variable influences the model to make accurate predictions.  Table 4 indicates the predictor variable importance used in the out-of-bag tuned Random Forest mode:  in descending order, relative humidity with an importance of 105; ambient temperature with 70; ambient temperature with 52; and ambient pressure with 40. Therefore, we can assume that relative humidity was the most influential predictor used in the model.</p>
+<p><strong>Discussion and Conclusions</strong></p>
+<p>Machine learning models can be implemented to replace the need to incorporate thermodynamic approaches. Thermodynamic approaches often use assumptions in real life application in order to use appropriate nonlinear equations relating to the system. Therefore, machine learning models can create easier and more effective predictions by removing the obstacles surrounding assumptions and nonlinear equations when modeling the system.</p>
+<p>The goal of this study is to improve upon Tufekci’s study on the prediction of electrical power using machine learning methods. Tufekci’s study concluded that the most successful model was bagging REPtree (using all predictors) with a RMSE of 3.787 and MAE of 2.818. To achieve this goal, the study focuses on finding the best model with a secondary objective of determining the predictor impact on the model. The most successful model will be regarded as the model with the lowest RMSE value. After analyzing the performance metrics on the test data set for each model used in this study, it was determined that Random Forest tuned by out-of-bag estimates yielded the best results. The final model used had a mtry value of 2 with an RMSE of 3.1709 and an R2 of .965 on the training data set. However, the performance metrics on the testing data sets had a slightly higher RMSE of 3.7197, a lower R2 of .952, and an MAE of 2.6460. The range of electrical power output (75.5) and mean (454.4) indicates that the RMSE value is suitable for accurate model prediction.</p>
+<p>Furthermore, each model included all four predictors to obtain the best model. In addition, the predictor variable importance, which gives insight on how influential each predictor is, was calculated for each of the predictors in the optimal model. Among all the predictors, relative humidity had the highest importance by a significant amount, followed by ambient temperature, ambient pressure, and turbine exhaust pressure. With this insight, plant operators can potentially focus on manipulating the relative humidity and ambient temperature to reach a desired electrical output level.</p>
+<p>In conclusion, the Random Forest model tuned by out-of-bag estimates slightly outperformed the most successful model in Tufekci’s 2014 study while using the same feature subset. Furthermore, the prediction accuracy for the optimal machine learning model is suitable enough to replace thermodynamic approaches to model a real world system. By doing so, the time and effort to model thermodynamic systems analytics can be greatly reduced. Additionally, eliminating assumptions can improve prediction accuracy as well. Future works on this study should include different tuned models in efforts to perfect the ability to predict electrical output. As time goes on, better models are introduced to the data science industry, which can lead to better results than what the model provided in this study. In addition, data should be gathered for different types of power plants with similar unit designs since different unit designs can drastically affect the predictor values.</p>
+<p><strong>References</strong></p>
+<p>Kuhn, M., &amp; Johnson, K. (2013). Applied Predictive Modeling. New York: Springer.</p>
+<p>Tufekci, P. (2014). Prediction of full load electrical power output of a base load operated combined cycle power plant using machine learning methods. Electrical Power and Energy Systems, 60, 126-140.</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="https://aminfesharaki97.github.io/Amin_Portfolio/tags/r" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">R</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="https://aminfesharaki97.github.io/Amin_Portfolio/post/project-1/">Predicting Student Performance</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://aminfesharaki97.github.io/Amin_Portfolio" >
+    &copy;  Amin Fesharaki 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+    <a href="https://www.linkedin.com/in/aminfesh" target="_blank" class="LinkedIn ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+    <a href="https://github.com/aminfesharaki97" target="_blank" class="Github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

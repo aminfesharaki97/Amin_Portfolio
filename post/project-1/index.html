@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Predicting Student Performance | Amin Fesharaki</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Uncovering Insights for Student Success">
+    <meta name="generator" content="Hugo 0.101.0" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="https://aminfesharaki97.github.io/Amin_Portfolio/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Predicting Student Performance" />
+<meta property="og:description" content="Uncovering Insights for Student Success" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aminfesharaki97.github.io/Amin_Portfolio/post/project-1/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-12-06T10:58:08-04:00" />
+<meta property="article:modified_time" content="2021-12-06T10:58:08-04:00" /><meta property="og:site_name" content="Amin Fesharaki" />
+
+<meta itemprop="name" content="Predicting Student Performance">
+<meta itemprop="description" content="Uncovering Insights for Student Success"><meta itemprop="datePublished" content="2021-12-06T10:58:08-04:00" />
+<meta itemprop="dateModified" content="2021-12-06T10:58:08-04:00" />
+<meta itemprop="wordCount" content="3421">
+<meta itemprop="keywords" content="R," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Predicting Student Performance"/>
+<meta name="twitter:description" content="Uncovering Insights for Student Success"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  <header class="cover bg-top" style="background-image: url('https://aminfesharaki97.github.io/Amin_Portfolio/images/istockphoto-1167641563-612x612.jpg');">
+    <div class="bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://aminfesharaki97.github.io/Amin_Portfolio/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Amin Fesharaki
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://aminfesharaki97.github.io/Amin_Portfolio/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://aminfesharaki97.github.io/Amin_Portfolio/code/" title="Code page">
+              Code
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://aminfesharaki97.github.io/Amin_Portfolio/post/" title="Projects page">
+              Projects
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+<div class="ananke-socials">
+  
+    <a href="https://www.linkedin.com/in/aminfesh" target="_blank" class="LinkedIn ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+    <a href="https://github.com/aminfesharaki97" target="_blank" class="Github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Predicting Student Performance</h1>
+          
+            <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+              Uncovering Insights for Student Success
+            </h2>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        PROJECTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Predicting Student Performance</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2021-12-06T10:58:08-04:00">December 6, 2021</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p><strong>Summary</strong>:</p>
+<ul>
+<li>Created linear regression models to predict the performance of a student based on various aspects of a student’s background, abilities, skills, and past performance. The regression models were leveraged to identify what are the factors that have a significant impact on student performance and how powerful that impact is.</li>
+<li>Implemented multiple types of classification algorithms including C5 classification, CART, and neural networks, to predict student performance on a pass-fail basis based on factors that may not have been conducive for regression analysis.</li>
+<li>The study aimed to leverage the power and insight of regression models and classification models to understand what are the important factors and variables that affect student performance and to test preconceived notions on what impacted student performance.</li>
+<li>Models include linear regression, neural network, and decision trees (CART, C5.0, Naives Bayes).</li>
+</ul>
+<p><a href="https://github.com/aminfesharaki97/Predicting_Student_Performance_Project">Link to GitHub Repository</a></p>
+<p><strong>Introduction</strong></p>
+<p>The effectiveness of a pupil’s education has been tied to multiple factors including the socioeconomic background of the student, the socio-economic background of their family, or other factors outside of the traditionally assumed factors of time and effort (Duncan &amp; Murname, 2011). As the family income gap between poor and non-poor students widens, school performance also has shown to diverge, favoring non-poor students (Duncan &amp; Murname, 2011). As technology advances, teaching methods have evolved for students and teachers with access to newer pedagogical techniques and tools (Chi et al., 2011). In 2017, the United States spent 3.6% of its GDP on elementary and secondary education (U. S. Department of Education, 2021). Despite these efforts of allocating public resources, teachers and administrators, as well as engaged parents, still struggle to consistently improve student performance for considerable swathes of the population regardless of the neighborhood in which they live (Chetty et al., 2020).</p>
+<p>Developments in data mining techniques are now available to provide teachers with insights to better assess patterns in student performance. With these tools, teachers and administrators will be able to target their strategies for improving student performance where there is an opportunity for improvement (Ali, 2013). They can use the patterns they discover in student and school performance to assist in crafting new policies aimed at improving the educational experience (Chi et al., 2011).</p>
+<p>This proposed data mining assessment is aimed at identifying characteristics of student experience that may not have been obvious in the past, but now through leveraging the large availability of data and advanced data mining techniques can be used to predict student success.</p>
+<p><strong>Project Overview</strong></p>
+<p>There were two types of data science models that were leveraged to conduct this statistical study on student performance. The first method was to create linear regression models to predict the performance of a student based on various aspects of a student’s background, abilities, skills, and past performance. We leveraged regression models to identify what are the factors that have a significant impact on student performance and how powerful that impact is.</p>
+<p>Additionally, this study also leveraged multiple types of classification algorithms including C5 classification, CART, and neural networks, to predict student performance on a pass-fail basis based on factors that may not have been conducive for regression analysis.
+The study aimed to leverage the power and insight of regression models and classification models to understand what are the important factors and variables that affect student performance and to test preconceived notions on what impacted student performance. Using two types of models allowed us to leverage different features to take a holistic approach for this study. Different insights were learned from the two types of data mining techniques and uncovered that there were some features that we did not expect to significantly impact student performance that indeed had, and conversely showed other factors that had low or no relationship with student performance than we expected to have otherwise.</p>
+<p><strong>Data Set Description</strong></p>
+<p>The Student Performance Data Set was provided by the UCI Machine Learning Repository (Cortez and Silva, 2008). The data set describes student achievement in two different secondary education Portuguese schools for the specific subjects of Math and Portuguese. The attributes included in the dataset include information regarding student grades, demographic information, social information, school-related attributes, and were collected by using school reporting and surveys. Two datasets were provided with the same set of features and detailed information about students from the same two schools but differentiated by reporting performance in the two separate subjects of Mathematics and Portuguese. Finally, before any manipulation, the dataset contains 33 attributes. Exploratory analysis of the data found that the data set was clean with no missing values, variables of the wrong type, or variables that did not fit what the attribute was attempting to show. A list of the attributes and their description are provided in the appendix.</p>
+<p><strong>Data Mining Steps</strong></p>
+<p>For this study, we performed 3 main data mining tasks to explore the data set and the relationships between student performance variables. The 3 sections of data mining include Exploratory Data Analysis (EDA), regression modeling, and classification modeling. Performing these tasks provided insights into the data, and allowed us to measure the relationships of the student performance attributes.
+Before creating the data mining models, an Exploratory Data Analysis was conducted. The main objective of the Exploratory Data Analysis was to find if there are any concerns in the validity of the data and to explore the distribution of the dataset. Originally, the data as provided by the UCI Machine Learning Repository was provided in two separate files. One file contained student performance data detailing students that were part of a math class and the other data set provided the same attributes but for students from a Portuguese class. As the emphasis of this study was focused on the overall attributes of student performance, and not necessarily keen to that of one specific subject, it was decided to concatenate both the data sets into one source while creating a new variable to distinguish the records coming from the math data set vs the Portuguese data set. After loading the data, missing values or data records not matching the same type as the rest in the attributes was located. As no such issues were found, I had confidence in the validity of the data and found that the data was recorded without major errors.</p>
+<p>Following the first exploration and manipulation, we continued the EDA process by observing the distribution of the data. Knowing the distribution was important to find where there may be low density areas in the data set specific to certain features, but also to find if we there simply was enough data to explore certain relationships. The data was not evenly balanced as there was a significantly higher index of students from one school than the other school detailed in the set. In addition, the imbalance was evident in other attributes where variables were not completely balanced or followed an usual distribution path. This revealed even before building out any models that it may not be purposeful to explore relationships or make comparisons between the student populations of the two schools as the imbalance in the data may simply result with less records than needed to draw these insights.</p>
+<p>Similarly, other features that were not balanced such as the distribution of age, exam scores, time spent studying, and more. Ultimately, we were not concerned about the distribution of these other features but kept it in mind for the interpretation of the results of the model. After  time spent exploring, the data was partitioned into a training and testing dataset. The distribution of the test data was checked to see if it matched the distribution of the training data set.</p>
+<p>After completing the initial exploratory data analysis, it was decided that there was strong enough understanding of the data to build a linear regression model. The purpose of the linear regression model would be to leverage a subset of attributes to develop a model that could predict the student’s performance for their Final Grade. The Final Grade score was considered to be a marker of the student’s overall performance. When picking the subset of variables for the model, I was selective in which variables to use. The reason being that if we included too many variables, we could unintentionally introduce multicollinearity into the model, causing our model to be inaccurate. Lastly, while the direct purpose of the linear regression models would be to predict student performance, we would be evaluating the model to find and understand what features are significant to the regression model and if those features can provide us insight into action that can be taken by schools, families, and policy makers to bolster student performance. After subsetting the data set and selecting our initial collection of attributes, we built the first version of our regression model using our training data set to learn the model. We then leveraged the test data set to find predicted values from the model and calculated the Mean Average Error of the regression by calculating the difference between the predicted values and the actual values of the test data set using R’s “mae” function.</p>
+<p>The results showed that while our model was more accurate than the Mean Average Error baseline, there were many variables we had initially included which were actually not significant to the model. To find if the model would be more accurate without those models, I created another regression model but leveraging only the variables that were significant, after testing the initial model with the test data. When testing this 2nd model, it was found that the Mean Average Error further decreased, which meant that it was indeed more accurate. I continued this process of refining the model by removing attributes of lower significance levels but found that outside of the initial revision where the features were removed from the list of predictors that showed no significant relationships, that removing attributes did not make a difference in the error.</p>
+<p>Following the regression model, classification models were created to determine whether a student would pass or fail using various predictors. Classification models used to predict student performance include C50, CART, and neural networks. The purpose of using three different models is to evaluate each model’s performance to determine which model is the most efficient for the project’s specific dataset. To proceed with the classification models, the dataset was subsetted for only certain attributes where the data was standardized to optimize model performance.</p>
+<p>Creating the different classification models showed that each model interpreted the different features in a different way, and gave weights that differed from each type of model. Using the classification technique allowed us to have a different perspective in interpreting the features and showed insights different from the regression analysis.</p>
+<p><strong>Results and Discussion</strong></p>
+<p><em><strong>Regression Model</strong></em></p>
+<p>The first regression model was created, model 1, using the features age, traveltime, studytime, failures, famrel, freetime, Dalc, absences, G1, and G2 from the training data set. After leveraging the model to create predictions, we found that multiple features that we expected to be significant were actually insignificant including age, studytime, famrel, freetime, and Dalc. The feature most surprising to see as insignificant was studytime as it showed that the amount of time a student from this data set spent studying did not necessarily have an impact on their future performance. This conflicts with the preconceived notion that many hold that anybody can perform well in school given that they spend a large amount of time studying. The results of this initial model show otherwise, in that instead what is significant for success is past performance. This is shown by the fact that the features that do show significance include failures, absences, G1, and G2. These 4 features all detail a student’s past performance either on exams or assignments, or in performance to be available.</p>
+<p>After creating the initial regression model, a secondary model was created, removing the insignificant variables from the first model. The 2nd model contained variables all of which were statistically significant and had a lower mean average error validating that it performed better than the original model. The equation of the improved model and the MAE regression compared to the MAE baseline would be: G3 = (5.86e-02)failures + (4.47e-02)absences + (1.02e-01)G1 + (8.02e-01)G2
+MAE Regression: 0.241
+MAE Baseline: 0.686</p>
+<p><em><strong>Classification</strong></em></p>
+<p>The C5.0, CART, and neural network models used the same predictors to evaluate individual model performances for this dataset. The predictors used to determine whether a student would pass or fail are age, travel time, study time, failures, famrel (quality of family relationships), free time, school, family size, Psatus (parent’s cohabitation status), activities, famsup (family educational support), higher (interest in higher education), and sex. In addition, the models will also be compared against the all negative baseline model with an accuracy of 36.7%. The dataset yields a baseline accuracy of 36.7%. Therefore, any model with an accuracy above 36.7% would be considered useful.</p>
+<p><em><strong>C5.0 Model</strong></em></p>
+<p>A C5.0 model is a supervised machine learning algorithm used to predict a records’ class from the values of the other attributes. Executing the C5.0 algorithm resulted in a decision tree with four decision nodes and five leaf nodes as shown in Figure 1. The model begins with a root node for failures where students with more than 1 past failure will immediately terminate in leaf node 9 with a low probability of passing the class. If a failure does not exceed 0, then it will proceed to Node 2. Node 2’s split is on whether or not study time exceeds 0.333. If it does, the branch will terminate in leaf node 8 where there is a roughly close split between passing and failing. If study time does not exceed 0.333, then the tree will split to Node 3. If students respond with no activities, the tree is terminated in node 4 where there is a higher probability of failing than passing. If students respond with yes, then the tree splits into the final node (Node 5). Node 5 terminates the remaining records into Node 6 and Node 7, where having less than the threshold of absences resulted in a higher probability of passing the class.</p>
+<figure><img src="https://aminfesharaki97.github.io/Amin_Portfolio/images/C5.0.png"/><figcaption>
+            <h4>C5.0 Model to Predict Pass or Fail</h4>
+        </figcaption>
+</figure>
+
+<p><em><strong>CART Model</strong></em></p>
+<p>The CART model is used to explain how an outcome target’s values can be predicted based on other attributes. The method involves selecting an input variable and splitting it where there are exactly two branches for each decision node. The root node is split into the following decision nodes until it terminates in the leaf nodes. As shown in Figure 2, the CART model has 1 root node, 18 decision nodes, and 20 leaf nodes. Figure 2 illustrates the separate split labels for the left and right directions for all the nodes. In addition, the nodes indicate the probability per class of observations in the node as well as displaying the percentage of observations. Further inspection of Figure 2 will reveal the decision tree pathway indicating the impact of each predictor when predicting whether a student passed or failed.</p>
+<figure><img src="https://aminfesharaki97.github.io/Amin_Portfolio/images/CART.png"/><figcaption>
+            <h4>CART Model to Predict Pass or Fail</h4>
+        </figcaption>
+</figure>
+
+<p><em><strong>Neural Network Model</strong></em>
+Neural network algorithms excel at machine learning models due to their ability to recognize hidden patterns in datasets. Figure 3 illustrates the neural network model used to predict the final grade (i.e, passing grade). Within the figure, there are two constants (B1 and B2), one hidden layer (H1), fourteen inputs(I1-14), and one output (O1). Moreover, weights in a neural network can give insights into each predictor’s significance to the model. With regards to Figure 3, black lines indicate positive connections and red lines indicate negative connections. In addition, the line thickness is proportional to the absolute magnitude of each weight. Therefore, according to the figure below, an interest in higher education and study time have the largest positive weight while failures and absences had the largest negative weights. In other words, the positive weights indicate that having an interest in higher education protects against the probability of failing. On the other hand, the negative weight indicates that an increased number of failures results in an increased probability of failing. This description can also be applied to all other positive and negative weights.</p>
+<figure><img src="https://aminfesharaki97.github.io/Amin_Portfolio/images/Neural%20Network.png"/><figcaption>
+            <h4>Network Model to Predict Pass or Fail</h4>
+        </figcaption>
+</figure>
+
+<p><em><strong>Classification Model Evaluation</strong></em></p>
+<p>Looking at the table, all models outperformed the baseline model performance of 36.7% indicating that all classification models were useful in predicting student performance. Furthermore, accuracy represents the overall proportion of correct classifications being made by the model. The CART, C5.0, and neural network model had accuracies of 39.4%, 60.2%, and 64.0% respectively. Comparing the models, the neural network yielded the highest accuracy and lowest error rate.</p>
+<figure><img src="https://aminfesharaki97.github.io/Amin_Portfolio/images/ModelCompare.png"/><figcaption>
+            <h4>Model Evaluation Metrics</h4>
+        </figcaption>
+</figure>
+
+<p>Additionally, sensitivity measures the ability of the model to classify a record positively, while specificity measures the ability to classify a record negatively. The C5.0 model had the highest sensitivity of 69.1% making it the best model if the study placed higher importance on avoiding false negatives than false positives. On the other hand, the neural network model had the highest specificity of 76.4% by a large margin, making it the best model if false positives were more crucial to avoid.</p>
+<p><strong>Conclusion</strong></p>
+<p>The results of this initial model show otherwise, that instead what is significant for success is past performance. This is shown by the fact that the features that do show significance include failures, absences, G1, and G2. These 4 features all detail a student’s past performance either on exams, assignments, or in performance to be available.</p>
+<p>The results of our linear regression model showed that the best predictor of student performance is simply the student’s past performance. Features including a student’s family background, or the time they spent studying, did not show a significant relationship with the grade of the student on their final exam. These results may suggest that for a student to do well in a class, they cannot rely on their performance on just the final exam or certain assignments but that they should focus on consistent excellence all the way through.</p>
+<p>Moreover, A good classification model should have acceptable levels of accuracy, sensitivity, and specificity. Therefore, the neural network model was considered the best model to use when compared to the C5.0 and CART models. In addition, several considerations should be explored to increase model performance. Models with different predictor combinations should be executed to potentially increase model accuracy. Furthermore, a correlation and multicollinearity analysis can be conducted to determine which predictors are most significant when predicting student performance. Additionally, identifying and removing outliers can also potentially increase model performance. Lastly, different classification models can be incorporated to determine if there is a better classification model than the neural network to predict whether a student would pass or fail based on a set of characteristics.</p>
+<p>The analysis of student performance for this group of Portuguese students proved that many of the preconceived notions that we had in regards to student performance were not relevant for this group of students. It was found that differences in the family relationships and socioeconomic backgrounds of these students failed to show a significant relationship with their performance and that their performance was directly impacted by only a subset of features related to their past performance in their classes. Nevertheless, the results of this study show insight into possible areas for more research. Future work suggestions include more research will need to be done with a wider group of students to see if the insights from this study are relevant for all students and can be applied elsewhere.</p>
+<p><strong>References</strong></p>
+<ul>
+<li>Ali, M. (2013). Role of Data Mining in Education Sector. International Journal of Computer Science and Mobile Computing, 2(4), 374 – 383.</li>
+<li>Chetty, R., Friedman, J. N., Hendren, N., Jones, M. R., &amp; Porter, S. R. (2020). The Opportunity Atlas: Mapping the Childhood Roots of Social Mobility. National Bureau of Economic Research. Retrieved December 7, 2021, from <a href="https://www.nber.org/system/files/working_papers/w25147/revisions/w25147.rev0.pdf">https://www.nber.org/system/files/working_papers/w25147/revisions/w25147.rev0.pdf</a></li>
+<li>Chi, M., VanLehn, K., Litman, D., &amp; Jordan, P. (2011). Empirically evaluating the application of reinforcement learning to the induction of effective and adoptive pedagogical strategies. User Modeling and User-Adapted Interaction, 21(1-2), 137-180. <a href="https://doi.org/10.1007/s11257-010-9093-1">https://doi.org/10.1007/s11257-010-9093-1</a></li>
+<li>Duncan, G., &amp; Murname, R. (Eds.). (2011). Wither Opportunity? Rising Inequality, Schools, and Children’s Life Chances. Russell Sage Foundation.</li>
+<li>Cortez, P., &amp; Silva, A., Using Data Mining to Predict Secondary School Student Performance. In A. Brito and J. Teixeira Eds., Proceedings of 5th FUture BUsiness TEChnology Conference (FUBUTEC 2008) pp. 5-12, Porto, Portugal, April, 2008, EUROSIS, ISBN 978-9077381-39-7.</li>
+<li>U. S. Department of Education. (2021, May). Education Expenditures by Country. National Center for Education Statistics. Retrieved December 10, 2021, from <a href="https://nces.ed.gov/programs/coe/indicator/cmd">https://nces.ed.gov/programs/coe/indicator/cmd</a></li>
+</ul>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="https://aminfesharaki97.github.io/Amin_Portfolio/tags/r" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">R</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://aminfesharaki97.github.io/Amin_Portfolio" >
+    &copy;  Amin Fesharaki 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+    <a href="https://www.linkedin.com/in/aminfesh" target="_blank" class="LinkedIn ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+    <a href="https://github.com/aminfesharaki97" target="_blank" class="Github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

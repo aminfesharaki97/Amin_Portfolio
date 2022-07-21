@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWS on Amin Fesharaki</title>
+    <link>https://aminfesharaki97.github.io/Amin_Portfolio/tags/aws/</link>
+    <description>Recent content in AWS on Amin Fesharaki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 Dec 2021 11:00:59 -0400</lastBuildDate><atom:link href="https://aminfesharaki97.github.io/Amin_Portfolio/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Predicting NFL Draft Order</title>
+      <link>https://aminfesharaki97.github.io/Amin_Portfolio/post/project-2/</link>
+      <pubDate>Mon, 20 Dec 2021 11:00:59 -0400</pubDate>
+      
+      <guid>https://aminfesharaki97.github.io/Amin_Portfolio/post/project-2/</guid>
+      <description>Summary:
+Entirety of the project was done using Amazon Web Services Data was uploaded to an Amazon S3 bucket. This data will be read via a Sagemaker Studio notebook utilizing a Sagemaker session and boto3 connection to S3. The data was saved to the local Sagemaker Studio instance as CSV before being read into data frames and explored further. Data ingestion and data exploration using SageMaker Studio Notebook ML data was prepared with Amazon Sagemaker Data Wrangler Link To GitHub Repository</description>
+    </item>
+    
+  </channel>
+</rss>

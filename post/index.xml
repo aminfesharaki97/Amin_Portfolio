@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Amin Fesharaki</title>
+    <link>https://aminfesharaki97.github.io/Amin_Portfolio/post/</link>
+    <description>Recent content in Projects on Amin Fesharaki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 Jun 2022 11:00:59 -0400</lastBuildDate><atom:link href="https://aminfesharaki97.github.io/Amin_Portfolio/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Predicting Full Power Output from a Combined Cycle Power Plant</title>
+      <link>https://aminfesharaki97.github.io/Amin_Portfolio/post/project-9/</link>
+      <pubDate>Mon, 27 Jun 2022 11:00:59 -0400</pubDate>
+      
+      <guid>https://aminfesharaki97.github.io/Amin_Portfolio/post/project-9/</guid>
+      <description>Summary:
+Exploratory data analysis, data pre-processing, modeling, and evaluated data from a combined cycle power plant. Linear and nonlinear regression models were built, optimized, and compared to find the optimal modeling strategy. Models include ordinary least squares, partial least squares, principle component analysis, penalized linear models, ridge and lasso regression, support vector machines, K-nearest neighbor multivariate adaptive regression splines, random forest, boosted and bagged trees, cubist regression, and neural network. Random forest tuned by out-of-bag estimates outpeformed all models with a root mean square error score of 3.</description>
+    </item>
+    
+    <item>
+      <title>Predicting NFL Draft Order</title>
+      <link>https://aminfesharaki97.github.io/Amin_Portfolio/post/project-2/</link>
+      <pubDate>Mon, 20 Dec 2021 11:00:59 -0400</pubDate>
+      
+      <guid>https://aminfesharaki97.github.io/Amin_Portfolio/post/project-2/</guid>
+      <description>Summary:
+Entirety of the project was done using Amazon Web Services Data was uploaded to an Amazon S3 bucket. This data will be read via a Sagemaker Studio notebook utilizing a Sagemaker session and boto3 connection to S3. The data was saved to the local Sagemaker Studio instance as CSV before being read into data frames and explored further. Data ingestion and data exploration using SageMaker Studio Notebook ML data was prepared with Amazon Sagemaker Data Wrangler Link To GitHub Repository</description>
+    </item>
+    
+    <item>
+      <title>Predicting Student Performance</title>
+      <link>https://aminfesharaki97.github.io/Amin_Portfolio/post/project-1/</link>
+      <pubDate>Mon, 06 Dec 2021 10:58:08 -0400</pubDate>
+      
+      <guid>https://aminfesharaki97.github.io/Amin_Portfolio/post/project-1/</guid>
+      <description>Summary:
+Created linear regression models to predict the performance of a student based on various aspects of a student’s background, abilities, skills, and past performance. The regression models were leveraged to identify what are the factors that have a significant impact on student performance and how powerful that impact is. Implemented multiple types of classification algorithms including C5 classification, CART, and neural networks, to predict student performance on a pass-fail basis based on factors that may not have been conducive for regression analysis.</description>
+    </item>
+    
+    <item>
+      <title>Crude Oil Distillation Unit Design</title>
+      <link>https://aminfesharaki97.github.io/Amin_Portfolio/post/project-8/</link>
+      <pubDate>Mon, 22 Apr 2019 11:00:59 -0400</pubDate>
+      
+      <guid>https://aminfesharaki97.github.io/Amin_Portfolio/post/project-8/</guid>
+      <description>Summary:
+Designed process flow diagrams, characterized input streams, calculated pump sizing, and conducted heat integration for a crude distillation unit Drafted a proposal for the unit design with a fixed-capital investment estimation and safety analysis Letter of Transmittal
+10 June 2019
+E&amp;amp;C Refining Company
+Irvine, California
+E&amp;amp;C Refining Upgrade Project
+Dear E&amp;amp;C Co. representative(s),
+CBE Design Team is grateful for the opportunity to help design a new Crude Distillation Unit (Unit 2) for the E&amp;amp;C refinery site in Irvine, California.</description>
+    </item>
+    
+    <item>
+      <title>Spacecraft Thermal Management Systems</title>
+      <link>https://aminfesharaki97.github.io/Amin_Portfolio/post/project-10/</link>
+      <pubDate>Thu, 10 Jan 2019 11:00:59 -0400</pubDate>
+      
+      <guid>https://aminfesharaki97.github.io/Amin_Portfolio/post/project-10/</guid>
+      <description>Summary:
+Coordinated with a multidisciplinary team to determine a cost-effective method to produce an electrochemical cell for space applications. Link To Project Website</description>
+    </item>
+    
+    <item>
+      <title>CRISP-DM</title>
+      <link>https://aminfesharaki97.github.io/Amin_Portfolio/post/project-7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aminfesharaki97.github.io/Amin_Portfolio/post/project-7/</guid>
+      <description>Summary:
+Drafted a CRISP-DM report for the Chemistry and Mathematics in Phase Space organization to implement a plan of action to predict the magnetic interaction between two atoms in a molecule Exploratory data analysis conducted through python Link To GitHub Repository
+Business Understanding Background
+Researchers across the globe conduct nuclear magnetic resonance experiments (NMR) to understand the dynamics and structures of molecules. Furthermore, using NMR to gain insight into molecular properties depends on accurately predicting scalar couplings.</description>
+    </item>
+    
+    <item>
+      <title>Modeling TailPipe Emissions</title>
+      <link>https://aminfesharaki97.github.io/Amin_Portfolio/post/project-5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aminfesharaki97.github.io/Amin_Portfolio/post/project-5/</guid>
+      <description>Summary:
+Created a multiple regression model with an R2 value of 98.86% to statistically investigate the association of tailpipe CO2 emissions after controlling specific vehicle characteristics. Performed statistical analysis to investigate tailpipe CO2 emissions based on vehicle characteristics Methods include descriptive statistics, bivariate frequency, associations, probability density function, pearson correlation coefficients, pearson’s chi-square test, multicollinearity, and regression modeling The final model resulted in a p-value less than .0001 with a confidence level of 95% and a R2 value of 98.</description>
+    </item>
+    
+    <item>
+      <title>Predicting House Sales</title>
+      <link>https://aminfesharaki97.github.io/Amin_Portfolio/post/project-3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aminfesharaki97.github.io/Amin_Portfolio/post/project-3/</guid>
+      <description>Imported, cleaned, and preprocessed data set with exploratory data analysis Built a linear regression, decision tree, random forest, and XGB regressor models with a combination of different features to determine the best model to predict prices for housing data XGB regressor model performed the best with an accuracy of 93% Link To GitHub Repository</description>
+    </item>
+    
+  </channel>
+</rss>

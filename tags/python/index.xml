@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Amin Fesharaki</title>
+    <link>https://aminfesharaki97.github.io/Amin_Portfolio/tags/python/</link>
+    <description>Recent content in Python on Amin Fesharaki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://aminfesharaki97.github.io/Amin_Portfolio/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CRISP-DM</title>
+      <link>https://aminfesharaki97.github.io/Amin_Portfolio/post/project-7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aminfesharaki97.github.io/Amin_Portfolio/post/project-7/</guid>
+      <description>Summary:
+Drafted a CRISP-DM report for the Chemistry and Mathematics in Phase Space organization to implement a plan of action to predict the magnetic interaction between two atoms in a molecule Exploratory data analysis conducted through python Link To GitHub Repository
+Business Understanding Background
+Researchers across the globe conduct nuclear magnetic resonance experiments (NMR) to understand the dynamics and structures of molecules. Furthermore, using NMR to gain insight into molecular properties depends on accurately predicting scalar couplings.</description>
+    </item>
+    
+    <item>
+      <title>Predicting House Sales</title>
+      <link>https://aminfesharaki97.github.io/Amin_Portfolio/post/project-3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aminfesharaki97.github.io/Amin_Portfolio/post/project-3/</guid>
+      <description>Imported, cleaned, and preprocessed data set with exploratory data analysis Built a linear regression, decision tree, random forest, and XGB regressor models with a combination of different features to determine the best model to predict prices for housing data XGB regressor model performed the best with an accuracy of 93% Link To GitHub Repository</description>
+    </item>
+    
+  </channel>
+</rss>

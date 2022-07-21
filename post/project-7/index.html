@@ -1,0 +1,1693 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>CRISP-DM | Amin Fesharaki</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Predicting Molecular Properties">
+    <meta name="generator" content="Hugo 0.101.0" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="https://aminfesharaki97.github.io/Amin_Portfolio/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="CRISP-DM" />
+<meta property="og:description" content="Predicting Molecular Properties" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aminfesharaki97.github.io/Amin_Portfolio/post/project-7/" /><meta property="article:section" content="post" />
+
+<meta property="og:site_name" content="Amin Fesharaki" />
+
+<meta itemprop="name" content="CRISP-DM">
+<meta itemprop="description" content="Predicting Molecular Properties">
+
+<meta itemprop="wordCount" content="9560">
+<meta itemprop="keywords" content="Python," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CRISP-DM"/>
+<meta name="twitter:description" content="Predicting Molecular Properties"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  <header class="cover bg-top" style="background-image: url('https://aminfesharaki97.github.io/Amin_Portfolio/images/terry-vlisidis-RflgrtzU3Cw-unsplash.jpg');">
+    <div class="bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://aminfesharaki97.github.io/Amin_Portfolio/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Amin Fesharaki
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://aminfesharaki97.github.io/Amin_Portfolio/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://aminfesharaki97.github.io/Amin_Portfolio/code/" title="Code page">
+              Code
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://aminfesharaki97.github.io/Amin_Portfolio/post/" title="Projects page">
+              Projects
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+<div class="ananke-socials">
+  
+    <a href="https://www.linkedin.com/in/aminfesh" target="_blank" class="LinkedIn ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+    <a href="https://github.com/aminfesharaki97" target="_blank" class="Github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">CRISP-DM</h1>
+          
+            <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+              Predicting Molecular Properties
+            </h2>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        PROJECTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">CRISP-DM</h1>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p><strong>Summary</strong>:</p>
+<ul>
+<li>Drafted a CRISP-DM report for the Chemistry and Mathematics in Phase Space organization to implement a plan of action to predict the magnetic interaction between two atoms in a molecule</li>
+<li>Exploratory data analysis conducted through python</li>
+</ul>
+<p><a href="https://github.com/aminfesharaki97/Predicting-Molecular-Properties-EDA-">Link To GitHub Repository</a></p>
+<hr>
+<h2 id="business-understanding"><strong>Business Understanding</strong></h2>
+<hr>
+<p><strong>Background</strong></p>
+<p>Researchers across the globe conduct nuclear magnetic resonance
+experiments (NMR) to understand the dynamics and structures of
+molecules. Furthermore, using NMR to gain insight into molecular
+properties depends on accurately predicting scalar couplings. Currently,
+it is possible to accurately calculate scalar coupling constants given
+only 3D molecular structure as input by using state-of-the-art methods
+from quantum machines. However, these quantum mechanics calculations are
+costly and time-consuming, and thus, have limited applicability in
+day-to-day workflows.</p>
+<p>The rise of machine learning has created an opportunity to implore
+potential strategies using data to make scientific predictions. In the
+past, the chemistry machine learning community has focused on predicting
+molecular or atomic properties; therefore, no prior research has been
+conducted to predict atom-pair properties like scalar coupling
+constants. Thus, the Chemistry and Mathematics in Phase Space (CHAMPS)
+aims to utilize modern-day technology to incorporate machine learning
+and predictive analytics to revolutionize scientists&rsquo; understanding of
+chemical transformations. By developing a fast and reliable method to
+predict coupling interactions, chemists can gain structural insights
+quicker and cheaper, which will ultimately allow scientists to
+understand further how the 3D chemical structure of a molecule affects
+its properties and behavior. Such tools will ultimately impact
+researchers to make significant progress in a range of important
+problems, such as designing molecules to carry out specific cellular
+tasks or creating a better drug molecule to fight diseases. In addition,
+developing machine learning models will profoundly impact industries
+that depend on chemical change analysis.</p>
+<p>The Chemistry and Mathematics in Phase Space have requested our
+expertise to develop this machine-learning algorithm to assist chemists
+with their chemical research without NMR experimentation. Moreover,
+CHAMPS is a multidisciplinary organization involving Bristol University,
+Cardiff University, Imperial College, and Leeds University. This
+organization is dedicated to bringing together mathematicians, chemists,
+and data scientists to provide machine learning models that would
+significantly improve researchers&rsquo; current understanding of chemical
+transformation and ultimately impact all industries that rely on
+understanding chemical change. In addition, CHAMPS aims to &ldquo;utilize and
+develop methods in nonlinear dynamics and machine learning to cope with
+6n-dimensional representations of molecular dynamics datasets&rdquo; (CHAMPS,
+2018). Creating analytical models will enable researchers to capture the
+critical dynamics of complex systems and provide insights into the
+fundamental microscopic behavior of dynamical systems.</p>
+<p>Furthermore, CHAMPS is sponsored by the Engineering and Physical
+Sciences Research Council (EPSRC). The EPSRC is the &ldquo;main funding body
+for engineering, and physical sciences research in the UK [with the
+goal to] build the knowledge and skills base needed to address the
+scientific and technological challenges facing the nation&rdquo; (EPSRC,
+2021). By being part of the UK&rsquo;s Research and Innovation, the council is
+funded by a grant-in-aid from the UK government and is dedicated to
+supporting research that has an impact across all sectors. Therefore,
+the EPSRC has given CHAMPS a Programme Grant to address the &ldquo;urgent need
+to provide a framework for understanding and exploiting the explosion in
+dynamical information coming out of modern experiments and simulations
+in chemistry and biology&rdquo; (UK Research and Innovation, 2017). The
+project outlined in the CRISP-DM will have a long-term impact on a wide
+variety of EPSRC research themes, including environmental science,
+healthcare, pharmaceutical industries, energy, and chemical change.
+However, the immediate effect of this project will allow CHAMPS'
+researchers to replace NMR experimentation with a cheaper and faster
+alternative using a machine learning approach.</p>
+<p><strong>Business objectives and success criteria</strong></p>
+<p>This project aims to develop an algorithm to predict the magnetic
+interaction between two atoms in a molecule instead of relying on an NMR
+machine to analyze the scalar coupling constant. In other words, if
+successful, this project will replace the need to use NMR machines to
+calculate the scalar coupling constants of molecular molecules.
+Moreover, the prediction of the parameters, especially in 3-dimensional
+molecular structures, are &quot;increasingly moving towards the quantitative
+comparison between computed values for proposed chemical structures and
+experiment,&quot; so the use of accurate and quick NMR prediction methods is
+crucial to compare the two (Gerrad et al., 2020). Thus, comparing the
+experimental values with the computed values will determine the success
+of this project. The project outcome will be considered a success if the
+calculated values from the algorithm accurately resemble experimental
+values with a low standard error.</p>
+<p>Moreover, NMR machines and systems are quite costly. Lower field and
+benchtop NMR prices start at about $25,000 and increase to about
+$150,000. However, as the strength of the magnetic field of a compound
+increase, so does the price of an NMR machine. Typically, 300 MHz NMR
+prices start around $150,000 and increase up to $5 million for more
+powerful instruments like 900 MHz. In other words, increasing the
+magnetic field strength of an NMR machine to analyze specific molecular
+structures will increase the machine's price. The most powerful NMR
+machine, which can handle up to 1.2 GHz, is priced at $17.8 million
+(Bettenhausen, 2020). Therefore, utilizing a machine learning algorithm
+instead of NMR machines can greatly cut down on equipment costs. By
+implementing this algorithm, we can expect to save CHAMPS roughly
+$250,000 based on their current use of NMR machines.</p>
+<p>Furthermore, NMR experiments are also time-consuming. The run time of an
+NMR experiment depends on the complexity of the molecular structure. For
+example, a simple 1D spectrum of small molecule data can typically be
+collected in 15 minutes and run times for insensitive 3D and 4D chemical
+compounds can take about a week for a single NMR experiment. Moreover,
+data collection to calculate a three-dimensional structure can vary from
+a week to a few months (Mullen, 2021). Thus, incorporating a predictive
+model instead of relying on NMR experiments can greatly increase our
+chemist&rsquo;s productivity by reducing the time it takes to analyze a scalar
+coupling of molecular structures. Regarding the impact within CHAMPS&rsquo;s
+research department, the algorithm would reduce NMR experimentation
+rundown by 90%.</p>
+<p>In conclusion, creating a reliable algorithm to predict scalar coupling
+interactions quickly will enable our chemists to effectively understand
+a chemical compound's molecular properties. As a result, not only can
+we cut down the costs of acquiring NMR machines, but we will also be
+able to analyze our chemicals significantly faster, which will
+substantially improve productivity, increasing our profit margins. In
+addition, another option for profitability would be to sell the
+algorithm to environmental science, materials science, pharmaceutical
+industries, and energy sectors. By doing so, chemists across the globe
+can utilize this algorithm and further advance our understanding of
+chemical structures and molecular properties.</p>
+<p><strong>Inventory of resources</strong></p>
+<blockquote>
+<p><strong>Data:</strong></p>
+<p>Kaggle Dataset: The dataset contains data for 2,358,657 atoms
+collected through CHAMPS (Bristol University, Cardiff University,
+Imperial College, and Leeds University). The dataset was separated
+into 8 different sets of data (CSV files). In addition, the training
+and test splits are by molecule, so that no molecule in the training
+data is found in the test data. </p>
+<p>CSV Files:</p>
+</blockquote>
+<ol>
+<li>
+<p>Training - A dataset containing molecular names, atoms, and scalar</p>
+<blockquote>
+<p>coupling constants to train the predictive model</p>
+</blockquote>
+</li>
+<li>
+<p>Testing - The test set contains the same info as the training set,</p>
+<blockquote>
+<p>but without the target variable to test the predictive model</p>
+</blockquote>
+</li>
+<li>
+<p>Structures  - Contains the molecular structure for every molecule in</p>
+<blockquote>
+<p>x,y,z coordinates</p>
+</blockquote>
+</li>
+<li>
+<p>Dipole Moments - Contains the molecular electric dipole moment data.</p>
+<blockquote>
+<p>These are the three dimensional vectors that indicate charge
+distribution in the molecule.</p>
+</blockquote>
+</li>
+<li>
+<p>Magnetic Shielding Tensors - Contains the magnetic shielding tensors</p>
+<blockquote>
+<p>data for all atoms in molecules</p>
+</blockquote>
+</li>
+<li>
+<p>Mulliken Charges - Contains data for the mulliken charges for all</p>
+<blockquote>
+<p>atoms in the molecules</p>
+</blockquote>
+</li>
+<li>
+<p>Potential Energy - Contains data for the potential energy of the</p>
+<blockquote>
+<p>molecules</p>
+</blockquote>
+</li>
+<li>
+<p>Scalar Coupling Contributions -  Contains data for the scalar</p>
+<blockquote>
+<p>coupling constants from the training dataset</p>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>** Hardware:**</p>
+<p>Various models need to be used on different machines depending on the
+quantity and complexity of each of the datasets provided from CHAMPS.
+In addition, each PC is running a Linux OS operating system. </p>
+<p><em>Base Hardware:</em></p>
+</blockquote>
+<ol>
+<li>Linux OS, Windows 10, or macOS PC with at least 16 gb of ram</li>
+</ol>
+<blockquote>
+<p><em>Suggested Hardware for Optimal Data Mining (Linux OS)</em> </p>
+</blockquote>
+<ol>
+<li>
+<p>PC(s) with 4 GPUs, each a NVIDIA GeForce RTX 2080 Ti</p>
+</li>
+<li>
+<p>PC(s) with 1 GPU NVIDIA Tesla V100 with 32 GB memory</p>
+</li>
+<li>
+<p>PC(s) with 1 GPU NVIDIA Tesla V100 with 16 GB Memory</p>
+</li>
+</ol>
+<blockquote>
+<p><strong>Software:</strong></p>
+</blockquote>
+<ol>
+<li>
+<p>Python 3.5+ - To load .csv file for data analysis and modeling</p>
+</li>
+<li>
+<p>Pytorch - Optimized tensor library primarily used for Deep Learning</p>
+<blockquote>
+<p>Applications </p>
+</blockquote>
+</li>
+<li>
+<p>NVIDIA APEX - A repository that holds NVIDIA-maintained utilities to</p>
+<blockquote>
+<p>streamline mixed precision and distributed training in Pytorch </p>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>**Personnel: **</p>
+</blockquote>
+<ol>
+<li>
+<p>Project Sponsor</p>
+<ul>
+<li>CHAMPS - 6 year EPSRC - sponsored Programme Grant involving
+<blockquote>
+<p>Bristol University, Leeds University, Cardiff University, and
+Imperial College</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>Principal Investigators</p>
+<ul>
+<li>
+<p>Craig Butts - Professor of Structural and Mechanistic at</p>
+<blockquote>
+<p>University of Bristol</p>
+</blockquote>
+</li>
+<li>
+<p>Will Gerad - Phd student under Craig Butts</p>
+</li>
+</ul>
+</li>
+<li>
+<p>CHAMPS Researcher</p>
+<ul>
+<li>Lars Bratholm  - Post-Doctoral Researcher</li>
+</ul>
+</li>
+</ol>
+<p><strong>Requirements, Assumptions, Constraints</strong></p>
+<p>The following section describes the requirements, assumptions, and
+constraints for this project. All parties (e.g., management and
+sponsorship) must fully comprehend this section before starting the
+project. Requirements of the project will include a schedule of
+completion, comprehensibility, quality of results, and security.
+Moreover, the assumptions will be made by the project about the data.
+However, team members can later verify the assumptions on data during
+the data mining phase. Lastly, the constraints are also included in the
+project; constraints can be considered inefficiency or a roadblock to
+the project.</p>
+<p><em><strong>Requirements</strong></em></p>
+<p>The specific target for this project is for our chemists to cut downtime
+and company costs when conducting NMR experiments to examine molecular
+properties. In the future, we can discuss potential deployment
+strategies to allow researchers around the globe who conduct NMR
+experiments to have access to this model. This project can potentially
+impact all industries that rely on understanding chemicals:
+environmental science, pharmaceutical industries, and energy sectors.</p>
+<p>Furthermore, CHAMPS is an interdisciplinary organization comprising two
+central departments: chemistry and mathematics. However, only the
+chemistry researchers and staff members will need to assist our
+programming team with the fundamentals of targeted chemistry knowledge.
+The following table highlights the suggested schedule for optimal
+project performance and success. Outsourcing/hiring additional coders
+for the programming team should be completed before following the
+outlined schedule. Assuming there are no significant setbacks, this
+project is expected to take around 13 weeks to complete.</p>
+<hr>
+<p>**\        <strong>Phase</strong>       <strong>Task</strong>
+Time                    <br>
+Frame **</p>
+<hr>
+<p>Weeks 1 -  Data            Collect initial data, describe data, and
+2          Understanding   explore data</p>
+<p>Weeks 2 -  Data            Select, construct, integrate, and format data
+3          Preparation</p>
+<p>Weeks 4 -  Modeling        Select modeling technique, generate test
+8                          design, build model, and assess model</p>
+<p>Weeks 9 -  Evaluation      Evaluate results, review process, and if
+11                         needed, determine next steps to optimize model</p>
+<h2 id="13-------------------------report-and-review-project">Weeks 12 - Deployment      Plan monitoring and maintenance, produce final
+13                         report, and review project</h2>
+<p>Additionally, the platform on which the model is deployed should be
+user-friendly, where researchers and chemists should be able to use the
+model without prior technical coding knowledge. At least one coder
+should be tasked with maintaining the platform and roll out any updates
+as needed. In addition, the marketing team will be responsible for
+deploying the platform/software to the CHAMPS organizations of chemical
+researchers and potential future recipients in different industries
+outside of CHAMPS.</p>
+<p>Also, during the algorithm development, only members of the programming
+team will have access to the code to ensure no code tampering. Security
+will be achieved by two-factor authentication, including employee
+ID/password and a confirmation code sent via text message or email. In
+addition, sharing any information (i.g., code, emails, etc.) is
+prohibited during the duration of this project. However, sharing
+information is allowed after completing the project. This project is
+part of CHAMPS&rsquo; primary mission to &ldquo;enable the formulation of
+comprehensible analytic models which capture the key dynamics of complex
+systems and provide fundamental microscopic insight into the behavior of
+dynamical systems&rdquo; (CHAMPS, 2018). Therefore, allowing access and
+knowledge to others is detrimental to advancing our (anyone and everyone
+in the chemistry field) understanding of molecular properties and
+potentially optimizing the model.</p>
+<p><em><strong>Assumptions</strong></em></p>
+<p>As stated previously, this project&rsquo;s goal is to develop an algorithm
+that can predict the scalar coupling constants, the magnetic interaction
+between two atoms in a molecule, using various chemistry data constants
+for chemical researchers.</p>
+<blockquote>
+<p>Assumptions in direct regards to our goal:</p>
+</blockquote>
+<ul>
+<li>
+<p>&ldquo;scalar coupling constant&rdquo; - The scalar coupling constant is
+previously determined and proven for any molecule within the dataset
+provided to ensure the model's accuracy when comparing the
+predicted and actual values. </p>
+</li>
+<li>
+<p>&ldquo;various chemistry data constants&rdquo; - Data for structures, dipole
+moments, magnetic shielding charges, Mulliken charges, potential
+energy, and scalar coupling constants are assumed to be accurate
+within all the datasets.  </p>
+</li>
+<li>
+<p>&ldquo;chemical researchers&rdquo; - These people are assumed to be
+knowledgeable in their respective fields that can understand the
+data used for this model. </p>
+</li>
+</ul>
+<blockquote>
+<p>Data quality assumptions: </p>
+</blockquote>
+<ul>
+<li>
+<p>All samples, with their respective data constants, are assumed to be
+accurate in the data set provided. </p>
+</li>
+<li>
+<p>Data is assumed to follow a normal distribution to achieve the best
+possible model with the highest accuracy. </p>
+</li>
+<li>
+<p>The data for the project is also assumed to be available through
+CHAMPS and other sources and databases containing scalar coupling
+constants and atom indexes of chemical molecules that are
+experimentally proven and reviewed. </p>
+</li>
+</ul>
+<blockquote>
+<p>External factor assumptions:  </p>
+</blockquote>
+<ul>
+<li>
+<p>Financials - The sponsorship funding, along with our current
+resources, are enough to provide all financial funding needed to
+complete this project (e.g., hardware, software, and personnel). </p>
+</li>
+<li>
+<p>Technology - Modern-day computer systems and current analytical
+methods are assumed to be sufficient to develop a machine learning
+model to predict the target variable.</p>
+</li>
+</ul>
+<blockquote>
+<p>Assumptions regarding whether it is necessary to understand or explain
+the model:</p>
+</blockquote>
+<ul>
+<li>
+<p>CHAMPS&rsquo; senior management is assumed to have a high chemical
+understanding of each variable presented in the dataset. </p>
+</li>
+<li>
+<p>People using the algorithm are assumed to have a fundamental
+understanding of the topics pertaining to nuclear magnetic resonance
+(NMR) experiments. </p>
+</li>
+</ul>
+<p><em><strong>Constraints</strong></em></p>
+<blockquote>
+<p>General constraints:</p>
+</blockquote>
+<ul>
+<li>
+<p>Not all molecules known to man have had their scalar coupling
+constants determined. Therefore, predicting unknown molecules'
+scalar coupling constant cannot be genuinely verified without
+experimental data. </p>
+</li>
+<li>
+<p>No apparent legal issues for completing this project. However, a
+disclaimer should be added explaining how the model is only a
+prediction and should not be considered 100% accurate without
+further experimentation for support.</p>
+</li>
+<li>
+<p>The budget is not unlimited; management should consider the best
+cost-efficient hardware/software and a team that is best suited for
+the task at hand.</p>
+</li>
+<li>
+<p>The availability of staff and team members are not certain due to
+absences (e.g., emergencies and sickness); therefore, the timetable
+might be increased.</p>
+</li>
+</ul>
+<blockquote>
+<p>Technical accessibility of data constraints:</p>
+</blockquote>
+<ul>
+<li>
+<p>Current operating systems/software available may not accurately
+predict the target variable with a negligible standard of error.  </p>
+</li>
+<li>
+<p>When collecting data or transferring the data .csv files to the
+software mentioned in the &ldquo;inventory of resource&rdquo; section,
+uncoordinated data management can lead to inaccurate model
+development.</p>
+</li>
+</ul>
+<p>Relevant knowledge constraints:</p>
+<ul>
+<li>
+<p>Not understanding the relevant knowledge of the dataset can serve as
+a roadblock when developing the model.</p>
+</li>
+<li>
+<p>Current knowledge of the scientific topics related to this project
+is available through scholastically peer-reviewed journals. However,
+our understanding is continuously expanding through constant
+research of chemical change. </p>
+</li>
+</ul>
+<p><strong>RESOLVEDD Strategy</strong></p>
+<p>The RESOLVEDD strategy is a step-by-step decision-making method based on
+&quot;professional ethics and approaches ethics from the point of view of
+personal ethical problems in work contexts&quot; (Vakkuri and Kemell, 2019).
+The strategy consists of nine steps illustrating the rational ethical
+decision-making process. The RESOLVEDD procedure shown below highlights
+each step and how it can be related to the context of this project.</p>
+<ol>
+<li><em>Review</em>: The Chemistry and Phase Space is a research organization
+sponsored by the Engineering and Physical Sciences Research Council
+(EPRSC). The purpose of this project is to reduce the need to
+conduct NMR experiments by incorporating a machine-learning
+algorithm to predict the magnetic interaction between two atoms in a
+molecule (i.e., scalar coupling constant). Furthermore, CHAMPS is a
+non-profit organization whose intentions are to save time and money
+for their chemists and further progress chemical research by
+publishing this project for scientists to use around the world.</li>
+</ol>
+<p>However, as previously mentioned, CHAMPS' is funded by the EPRSC. Both
+these organizations are expected to follow the Global Chemist Code of
+Ethics. The Global Chemist code of Ethics states that &quot;research in
+chemical sciences should benefit humankind and improve quality of life,
+while protecting the environment and preserving it for future
+generations. [In addition], researchers should conduct their work with
+the highest integrity and transparency, avoid conflicts of interest, and
+practice collegiality in the best way &quot;(American Chemical Society,
+1965). Thus, the team members of this project are also expected to
+conduct research that upholds these same standards to progress chemical
+research. Therefore, the ethical concerns within the RESOLVEDD strategy
+are not directly aimed at the project itself but at CHAMPS' motivations
+for creating this endeavor.  </p>
+<ol start="2">
+<li>
+<p><em>Estimate</em>: Ethical concerns can arise if CHAMPS does not follow
+their mission statement to &quot;provide new models that revolutionize
+our understanding of chemical transformation&quot; (CHAMPS, 2018). One
+concern is that the motivation for this project is for CHAMPS to
+boost their credibility or prestige status within the chemical
+research field by publicizing the model and labeling it as accurate
+information, even though the model is incorrect or insufficient
+enough to replace NMR experimentation. Another way for the model to
+be inaccurate is if CHAMPS uses incorrect data or a biased sample of
+molecular data to achieve the goal of this project, knowing that it
+will fail when using data outside of the dataset. By publishing
+false information, the model will not benefit humankind and
+potentially harm the recipients of this information. For example, if
+a chemist assumes a wrong molecular property, the experiment can
+fail, wasting time and resources, or result in safety issues.
+Moreover, another potential ethical concern is if CHAMPS goes
+against their EPSRC sponsorship and decides to withhold their
+research and instead sell the model for profit in secrecy while
+restricting access to others.</p>
+</li>
+<li>
+<p><em>Solutions</em>: One solution to checking inaccuracies is to
+cross-reference the data with other chemical databases using the
+same molecules as CHAMPS provided. Another possible solution is
+reviewing any documentation of how and who collected the data used
+in this project. Additionally, the EPSRC can check the completed
+model to ensure the model's accuracy for chemical use. Moreover,
+with the ethical concern of limiting the model's access for profit,
+we can notify the EPSRC that CHAMPS is involved with this project
+and have them send a representative to CHAMPS to monitor its
+progression.</p>
+</li>
+<li>
+<p><em>Outcomes</em>: The consequences of disproving CHAMPS' supposedly
+correct data are a loss of the organization's reputation and
+potentially having their sponsorship from EPSRC removed. A result of
+sending an EPSRC representative to CHAMPS could be a loss of
+potential revenue.</p>
+</li>
+<li>
+<p><em>Likely</em>: The impact of checking CHAMPS data is ensuring CHAMPS is a
+reputable organization. Having an EPSRC representative to check on
+the project's progression would be further advancements towards
+chemical research and allowing chemists to gain structural insights
+faster and cheaper than conducting NMR experimentation.</p>
+</li>
+<li>
+<p><em>Values</em>: The values of scientific research include a &quot;duty to
+society, beneficence, conflict of interest, integrity,
+non-exploitation, professional competence, and professional
+discipline&quot; (Weinbaum et al., 2019). Integrity goes with the
+ethical concern that CHAMPS is skewing the data to promote their
+reputation. Beneficence, conflict of interest, and non-exploitation
+relate to CHAMPS selling their model for their financial greed
+instead of progressing in chemical research. Lastly, a lack of
+professional competence and discipline is caused by CHAMPS using
+inaccurate or false data to get their model working sufficiently
+while knowing that the model is not suitable enough to replace NMR
+experimentation.</p>
+</li>
+<li>
+<p><em>Evaluate</em>: Proceeding with the solutions mentioned previously,
+CHAMPS will be held accountable for providing correct data and
+allowing model access for chemists across the world to use. This
+will ensure the model's accuracy and its overall contribution to
+chemical research. Additionally, CHAMPS will uphold their mission
+statement and values of scientific research.</p>
+</li>
+<li>
+<p><em>Decide</em>: The best solution is to notify the Engineering and
+Physical Sciences Research Council of CHAMPS's involvement with
+this project. By doing so, the council will make sure that the data
+is correct not to harm their reputation and to promote their mission
+statement to &quot;maximize the contribution of each of [their]
+component parts&quot; (Engineering and Physical Sciences Research
+Council, 1994). The solution concerning cross-referencing the data
+with another chemical database and reviewing how the samples were
+collected for more than 2 million chemical compounds will take too
+much time and resources.</p>
+</li>
+<li>
+<p><em>Defend</em>: The most significant weakness to the representative
+solution is the simple fact that CHAMPS can lie to the council or
+hide their involvement with the project. However, as one of the
+primary sponsorships for the organization, it would be irrational
+for CHAMPS to be nothing but transparent to EPSRC. The funding
+CHAMPS receives from their sponsors, as well as their reputation and
+scientific goal, should far outweigh the financial gains from this
+one project. </p>
+</li>
+</ol>
+<p><strong>Risks and Contingencies</strong></p>
+<hr>
+<p><strong>Risk</strong>             <strong>Contingency Plan</strong></p>
+<hr>
+<p>Hardware Malfunction At least one backup machine with the same hardware
+(i.e., computer      should be available in case of a hardware
+systems)             malfunction. In addition, existing code and data
+should be backed up or saved onto an external hard
+drive or cloud storage periodically to prevent the
+loss of code/data. </p>
+<p>Software Issues      If one of the softwares fails to provide a desired
+(i.e., inability to  outcome, use a different software capable of
+provide accurate     machine learning models. Other softwares
+models)              sufficient for deep learning include, but not
+limited to, TensorFlow, Microsoft Cognitive
+Tooklit, Keras, ConvNetJS, Torch, and MXNet. </p>
+<p>System Outages       A backup generator should be available on site for
+(i.e., power loss,   power loss issues. Machines should be hardwired
+internet             into the router to prevent internet disruptions.
+connectivity)        However, mobile wireless hotspots should also be
+in place for internet outages. </p>
+<p>Staffing Issues      Each team should consist of two or more people to
+(i.e., staff member  prevent the disruption of workflow when a member
+is unavailable)      becomes unavailable due to an emergency. Team
+members must also record key thought processes,
+results, and annotate code. By doing so, if a
+member of the team becomes unavailable, another
+member can continue his or her work. </p>
+<p>Insufficient         If the hardware used cannot effectively analyze
+Hardware Performance the data or build an accurate model, then the
+(i.e., slow or       hardware should be upgraded by purchasing or
+unusable machine to  renting additional hardware capable of using the
+effectively analyze  software at optimal performance. Hardware upgrades
+data)                can include, but not limited to, upgrading ram,
+cpu cooling, processors, and graphics processing
+unit.  </p>
+<hr>
+<p><strong>Terminology</strong></p>
+<blockquote>
+<p><strong>6n-dimensional phase space:</strong> &ldquo;Six-dimensional space is any space
+that has six dimensions, six degrees of freedom, and that needs six
+pieces of data, or coordinates, to specify a location in this space&rdquo;
+(Davis, 2020)</p>
+<p><strong>Algorithm:</strong> Machine learning algorithm that can predict the target
+variable using a set of parameters. </p>
+<p><strong>Big Data Analytics:</strong> Analyzing big data using &ldquo;a collection of
+different tools types, including those based on predictive analytics,
+data mining, statistics, artificial intelligence, natural language
+processing, and so on&rdquo; (Russom, 2011).</p>
+<p><strong>Chemical Researchers:</strong> Researchers who conduct NMR experiments or
+chemists who use principles of chemical change.</p>
+<p><strong>Chemical Transformations:</strong> &ldquo;A chemical transformation can occur
+when molecules collide with sufficient energy&rdquo; (National Research
+Council, 2003).</p>
+<p><strong>Dipole Moments:</strong> &ldquo;Dipole moments occur when there is a separation
+of charge between atoms and electrons&rdquo; (Blaber, 2020).</p>
+<p><strong>Machine Learning:</strong> &ldquo;Machine learning is a branch of computer
+science that broadly aims to enable computers to &rsquo;learn&rsquo; without being
+directly programmed&rdquo; (Bi et al., 2019).</p>
+<p><strong>Magnetic Interactions:</strong> An interaction between two magnetic
+dipoles. This is a necessary component for a Nuclear Magnetic
+Resonance experiment.</p>
+<p><strong>Magnetic Shielding Tensor:</strong> &ldquo;The shielding or more properly the
+magnetic shielding is the tensor that describes the relative change in
+the local magnetic field at the nucleus position relative to the
+external magnetic field&rdquo; (Facelli, 2011).</p>
+<p><strong>Model</strong>: Model and results should be presented to senior
+management/sponsor in a clear but descriptive manner. The process of
+how the model was made and the significance of the results should be
+described in detail. </p>
+<p><strong>Nuclear Magnetic Resonance:</strong> &ldquo;Nuclear magnetic resonance (NMR)
+spectroscopy is a robust method, which can rapidly analyze mixtures at
+the molecular level without requiring separation and/or purification
+steps&rdquo; (Hatzakis, 2018).</p>
+<p><strong>Potential Energy:</strong> &ldquo;Potential Energy is the energy due to position,
+composition, or arrangement. Also, it is the energy associated with
+forces of attraction and repulsion between objects&rdquo; (Harbick et al.,
+2020).</p>
+<p><strong>Quantum Machines:</strong> Quantum computation using &ldquo;variational
+algorithms that employ classical optimization cou- pled with quantum
+hardware to evaluate the quality of each candidate solution&rdquo; (Gokhale
+et al., 2019).</p>
+<p><strong>Scalar Coupling Constants:</strong> An atomic property that is &ldquo;critically
+dependent on the 3D structure of the molecule for which they are being
+measured&rdquo; (Bratholm et al., 2021). In addition, the scalar coupling
+coefficient is a measure of the magnetic interaction between two atoms
+in a molecule.</p>
+<p><strong>Scalar Coupling Interactions:</strong> Scalar coupling &ldquo;is an interaction
+between nuclei containing spin&rdquo; (Kaseman, 2020)</p>
+</blockquote>
+<p><strong>Data mining goals and success criteria</strong></p>
+<p>In order to remove the need for NMR systems to analyze molecular
+properties, an algorithm will be developed to predict the magnetic
+interaction between two atoms in a molecule. Specifically, the algorithm
+needs to predict the scalar coupling constant between atom pairs, given
+two atom types, (i.e., O and C), the coupling type (i.e., 1JHN), and any
+features made from the molecular structure. Furthermore, to ensure the
+algorithm can predict this interaction, the model needs to
+sufficient\\ly predict the explicitly listed pairs in the train and
+test files rather than all the molecules. For example, the scalar
+coupling constant will predict some molecules that contain Oxygen (O);
+however, the algorithm should initially predict the scalar coupling
+constant for molecules that contain Oxygen (O) in the train and test
+files instead of predicting the scalar coupling constant for any pair
+that includes O. By comparing the train and test data, the accuracy of
+the predictive model can be determined.</p>
+<p>The success criteria for this project will be evaluated on the Log of
+the Mean Absolute Error, calculated for each scalar coupling type, and
+then averaged across types. Equation 1 indicates the accuracy score
+value for the scalar coupling constant.</p>
+<p>$$Score = \ \frac{1}{T}\sum_{t = 1}^{T}{log(}\frac{1}{n_{t}}\sum_{i = 1}^{n_{t}}\left| y_{i} - {\widehat{y}}_{i} \right|)$$</p>
+<p>(1)</p>
+<blockquote>
+<p>Where:</p>
+</blockquote>
+<ul>
+<li>
+<p><strong>T</strong> is the number of scalar coupling types</p>
+</li>
+<li>
+<p>$\mathbf{n}_{\mathbf{t}}$ is the number of observations of type t</p>
+</li>
+<li>
+<p>$\mathbf{y}_{\mathbf{i}}$ is the actual scalar coupling constant for</p>
+<blockquote>
+<p>the observation</p>
+</blockquote>
+</li>
+<li>
+<p>${\widehat{\mathbf{y}}}_{\mathbf{i}}$ is the predicted scalar</p>
+<blockquote>
+<p>coupling constant for the observation</p>
+</blockquote>
+</li>
+</ul>
+<p>For reference, the minimum <em>best</em> possible score for perfect predictions
+is approximately -20.7232 for this metric, as shown in Equation 1
+(Kaggle, 2019). Moreover, for this project, the target variable to
+predict is the scalar coupling constant. Therefore, the model's
+accuracy will follow the Log of the Mean Absolute Error, calculated for
+each coupling type, and then average across types. Afterward, tests will
+be performed on random atom indices of the atom-pair for any molecule,
+given the experimental scalar coupling constant, to compare the accuracy
+of individual cases rather than the average. This will confirm the
+accuracy of the model and highlight potential concerns when outliers, or
+extremes, data is present. By the completion date, the model should
+ensure consistent and repeatable target variable predictions
+sufficiently accurate for NMR analysis. </p>
+<p><strong>Project plan / Order of tasks</strong></p>
+<p>A Gantt chart is provided to outline the project plan and task estimates
+for each phase. Due to the extensive length of this outline, the tasks
+will be included underneath the chart to read each task easily.</p>
+<p><img src="media/image1.png" alt="Chart Description automaticallygenerated">{width=&ldquo;9.169376640419948in&rdquo;
+height=&ldquo;4.890243875765529in&rdquo;}</p>
+<hr>
+<p>GANTT CHART</p>
+<hr>
+<pre><code>                                                              **Duration**
+</code></pre>
+<p><strong>Task</strong>                                                        (In Days)</p>
+<p><strong>Phase 1: Understand the fundamental chemistry topics          <strong>8</strong>
+associated with this project's data and explore the surface <br>
+properties of the data.</strong></p>
+<p><strong>Data Understanding</strong>                                           </p>
+<p>Collaborate with the research team to understand the            6
+fundamentals for this project. Each team member needs to     <br>
+familiarize themselves on the following topics: scalar coupling
+contributions, dipole moments, magnetic shielding tensors,   <br>
+Mulliken charges, potential energy, and basic molecular      <br>
+structure.</p>
+<p>Acquire the data from the Chemistry and Mathematics in Phase    1
+Space&rsquo;s research department.</p>
+<p>Format the data, report the quantity of data, identify the      1
+fields, and perform primary aggregation for data summary     <br>
+statistics.</p>
+<p>Create data visualizations describing the distribution of       3
+scalar coupling coefficients, Mulliken charge, dipole moments<br>
+in X, Y, Z directions, potential energy, and magnetic shielding
+in each direction combination for each molecular type.</p>
+<p><strong>Phase 2: Understand how each independent variable can affect  <strong>6</strong>
+that scalar coupling contribution. Select, clean, construct, <br>
+integrate, and format data for model use.</strong></p>
+<p><strong>Data Preparation</strong>                                             </p>
+<p>Identify the data that will affect scalar coupling constants.   3
+An emphasis should be placed on the research team to determine<br>
+the importance of specific chemistry topics associated with  <br>
+scalar coupling contributions.</p>
+<p>Review that .csv files are complete. If necessary, remove       1
+outliers within the dataset. In addition, identify any errors<br>
+or missing values and report their location and frequency.</p>
+<p>Merge individual .csv files into one master file containing all 1
+relevant data.</p>
+<p>Reformat the master file into distinguishable tables of data    1
+representing each independent variable.</p>
+<p><strong>Phase 3: Develop a model to predict scalar coupling           <strong>25</strong>
+contributions for all molecular types using python-based     <br>
+software.</strong></p>
+<p><strong>Modeling</strong>                                                     </p>
+<p>Identify potential models capable of efficiently and accurately 3
+describing molecular compounds. Research scholastically      <br>
+peer-reviewed journals on deep learning in molecular chemistry.</p>
+<p>Implement graph network and transformer models for the machine  14
+learning algorithm (CHAMP&rsquo;s recommendation). If possible, in <br>
+regards to time constraints, creating additional models from <br>
+prior research to compare data results and efficiency with the<br>
+primary model type are encouraged.</p>
+<p>Replicate the model&rsquo;s primary structure to create individual    6
+models for each molecular type.</p>
+<p>Review that the model is developed following the CHAMP's       4
+evaluation criteria. In addition, make sure that the model can<br>
+predict the scalar contributions effectively.</p>
+<p><strong>Phase 4: Evaluate results, review process, and determine next <strong>15</strong>
+steps to optimize model's accuracy and efficiency.</strong></p>
+<p><strong>Evaluation</strong>                                                   </p>
+<p>Evaluate model target variable predictions using the Log of     4
+Mean Absolute Error, calculated for each scalar coupling type,<br>
+and then average across types; so that a 1% decrease in Mean <br>
+Absolute Error for one type provides the same improvement in <br>
+the score as 1% decrease for another type. In addition, create<br>
+plots comparing the model&rsquo;s prediction with the scalar coupling
+constants for each molecular type: 1JHC, 1JHN, 2JHC, 2JHH,   <br>
+2JHN, 3JHC, 3JHH, and 3JHN.</p>
+<p>Review the model and identify the following steps to optimize   TBD
+the algorithm&rsquo;s efficiency and accuracy. Then, contact CHAMPS<br>
+and determine whether the model meets satisfactory           <br>
+requirements.</p>
+<p>Perform ongoing iteration to model improvement. Apply           TBD
+improvements to all models for each of the molecular types.  <br>
+Continuesly use the Log of Mean Absolute Error to evaluate the<br>
+results.</p>
+<p><strong>Phase 5: Prepare the model for deployment and produce a final <strong>10</strong>
+report.</strong></p>
+<p><strong>Deployment</strong>                                                   </p>
+<p>Develop a plan to monitor and maintain the algorithm and UI for 3
+when the product is released. Assign one software engineer to<br>
+provide continuous updates and fix bugs as they arise.</p>
+<p>Create a final written report of the data mining engagement.    4
+Summarize all the steps of the project. Elaborate on the     <br>
+primary model method used and discuss the model's efficiency,<br>
+accuracy, and execution time. Include feature selections when<br>
+determining what independent variables were used in the final<br>
+model, what did not work, and what software/ hardware was used<br>
+to develop the model. Report all additional interesting      <br>
+findings. In addition, be prepared to have an in-person meeting
+with CHAMPS at the conclusion of the project to present the  <br>
+project's key results.</p>
+<p>Provide an overview of the data mining process used. For each   2
+stage of the process, determine if the action was necessary, <br>
+whether it was executed optimally, and how it could be improved
+for future development purposes. Identify failures, misleading<br>
+steps, and possible alternative actions to use if the project<br>
+is rebooted.</p>
+<p>Integrate algorithm into a user-friendly platform for chemists  TBD
+without coding background to use. Include instruction manuals<br>
+or tutorials.</p>
+<h2 id="release-the-software-to-champs-for-chemical-research-use-------1">Release the software to CHAMPS for chemical research use.       1</h2>
+<hr>
+<h2 id="data-understanding"><strong>Data Understanding</strong></h2>
+<hr>
+<p><strong>Initial data collection report</strong></p>
+<p>The following list of datasets were acquired from Kaggle and can be
+downloaded using the Kaggle API: </p>
+<blockquote>
+<p>API: kaggle competitions download -c champs-scalar-coupling</p>
+<p>Files:</p>
+</blockquote>
+<ul>
+<li>
+<p>train.csv </p>
+</li>
+<li>
+<p>test.csv</p>
+</li>
+<li>
+<p>structures.csv &amp; structures.zip</p>
+</li>
+</ul>
+<blockquote>
+<p>Additional Data:</p>
+<p><em>Note: Additional Data is provided for the molecules in Train only</em></p>
+</blockquote>
+<ul>
+<li>
+<p>dipole_moments.csv</p>
+</li>
+<li>
+<p>magnetic_shielding_tensors.csv</p>
+</li>
+<li>
+<p>mulliken_charges.csv </p>
+</li>
+<li>
+<p>potential_energy.csv</p>
+</li>
+<li>
+<p>scalar_coupling_contributions.csv</p>
+</li>
+</ul>
+<p>The datasets can also be accessed through the master directory located
+at C:/Users/datascience/Documents/Kaggle
+Datasets/champs-scalar-coupling. Furthermore, the data was collected
+through laboratory experiments using various chemistry methods,
+measuring instruments, and software. The experimental data were then
+organized into datasets provided by CHAMPS.</p>
+<p>Note: No problems were encountered investigating the csv file using
+Jupyter Notebook on a macOS with an Apple M1 Processor and 16gb of RAM.
+However, accurate predictive modeling cannot be achieved exclusively
+through this system, and therefore, additional hardware should be used
+for optimal performance</p>
+<p><strong>Data description report</strong></p>
+<p>The entire dataset requires 1.22 GB to download with a total of
+2,505,192 samples of atoms. Each file, with the exemption of the train
+and test, in the datasets each contain 130,789 unique values. Of the
+total 130,789 unique values, 65% (85012) are stored in the training file
+and the remaining 35% (45,777) are stored in the testing file. The
+testing and training splits are by molecule, so that no molecule in the
+test data is found in the training data. Additionally, the
+scalar_coupling_constributions file has the same number of unique values
+as the training set (85012). In total, there are 47 columns for the
+130,789 observations.</p>
+<p>The following description report was examined in python through Jupyter
+Notebook. In addition, each table is describing the column&rsquo;s properties
+under its respective csv file. It is important to note that the table
+serves as a surface-level summary and organization of columns within the
+dataset. The first row of the table indicates names of the data with its
+datatype (i.e., # is integer).</p>
+<p>Note: The tables shown below are not the full actual representation of
+the file itself. In addition, the table legend for datatypes (integers,
+string, decimals) is located at the end of this section.</p>
+<p>**File 1(a): structures.zip **</p>
+<blockquote>
+<p>A folder containing the molecular structure of all compounds used in
+the dataset. The &ldquo;first line is the number of atoms in the molecule,
+followed by a blank line, and then a line for every atom, where the
+first column contains the atomic element (C for carbon, H for hydrogen
+etc.) and the remaining columns contain the X, Y, and Z, cartesian
+coordinates&rdquo; (Kaggle, 2019). </p>
+<p><strong>File 1(b): structures.csv  -</strong> Same info as the structures zip but
+in one csv file instead of individual xyz files.</p>
+<p><strong>Table 1:</strong> Representation of &ldquo;structures.csv&rdquo; &ndash; 6 columns</p>
+</blockquote>
+<p>+&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;-+
+| $$           | <strong>#</strong>    | $$     | <strong>#</strong>   | <strong>#</strong>   | <strong>#</strong>   |
+| \underline{\ |           | \under |          |          |          |
+| mathbf{A}}$$ | <strong>ato     | line{\ | <strong>x</strong>    | <strong>y</strong>    | <strong>z</strong>    |
+|              | m_index</strong> | mathbf |          |          |          |
+| <strong>mol        |           | {A}}$$ |          |          |          |
+| ecule_name</strong> |           |        |          |          |          |
+|              |           | **     |          |          |          |
+|              |           | atom** |          |          |          |
++==============+===========+========+==========+==========+==========+
+| Names of the | Index of  | Atomic | C        | C        | C        |
+| molecule     | the atom  | e      | artesian | artesian | artesian |
+|              | in the    | lement | coo      | coo      | coo      |
+|              | molecule  |        | rdinates | rdinates | rdinates |
++&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;-+</p>
+<blockquote>
+<p><strong>File 2: dipole_moments.csv -</strong> Contains the molecular electric
+dipole moments. The dipole moments are three dimensional vectors that
+indicate the charge distribution in the molecule.</p>
+<p><strong>Table 2:</strong> Representation of &ldquo;dipole_moments.csv&rdquo; &ndash; 4 columns</p>
+</blockquote>
+<p>+&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;-+
+| $$\underlin     | <strong>#</strong>         | <strong>#</strong>         | <strong>#</strong>         |
+| e{\mathbf{A}}$$ |                |                |                |
+|                 | <strong>X</strong>          | <strong>Y</strong>          | <strong>Z</strong>          |
+| **              |                |                |                |
+| molecule_name** |                |                |                |
++=================+================+================+================+
+| Names of the    | X component    | Y component    | Z components   |
+| molecule        | respectively   | respectively   | respectively   |
+|                 | of the dipole  | of the dipole  | of the dipole  |
+|                 | moment         | moment         | moments        |
++&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;-+</p>
+<blockquote>
+<p><strong>File 3: Magnetic_shielding_tensors.csv-</strong> Contains the magnetic
+shielding tensors data for all atoms in molecules.</p>
+<p><strong>Table 3:</strong> Representation of &ldquo;magnetic_shielding_tensor.csv&rdquo; &ndash; 11
+columns (The table is transposed to fit all the information in 1 table
+(i.e, the columns and rows are flipped)</p>
+</blockquote>
+<hr>
+<p>$\underline{\mathbf{A}}\mathbf{\ }$<strong>molecule_name</strong>   Names of the molecule</p>
+<hr>
+<p><strong># atom_index</strong>                                      Index of the atom in the molecule</p>
+<p><strong># XX</strong>                                              XX elements of the tensor/matrix</p>
+<p><strong># YX</strong>                                              YX elements of the tensor/matrix</p>
+<p><strong># ZX</strong>                                              ZX elements of the tensor/matrix</p>
+<p><strong># XY</strong>                                              XY elements of the tensor/matrix</p>
+<p><strong># YY</strong>                                              YY elements of the tensor/matrix</p>
+<p><strong># ZY</strong>                                              ZY elements of the tensor/matrix</p>
+<p><strong># XZ</strong>                                              XZ elements of the tensor/matrix</p>
+<p><strong># YZ</strong>                                              YZ elements of the tensor/matrix</p>
+<h2 id="-zz----------------------------------------------zz-elements-of-the-tensormatrix"><strong># ZZ</strong>                                              ZZ elements of the tensor/matrix</h2>
+<blockquote>
+<p>**File 4: muliken_charges.csv -**Contains data for the mulliken
+charges for all atoms in the molecules.</p>
+<p><strong>Table 4:</strong> Representation of &ldquo;muliken_charges.csv&rdquo; &ndash; 3 columns</p>
+</blockquote>
+<p>+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+
+| $$\un                 | <strong>#</strong>               | <strong>#</strong>                |
+| derline{\mathbf{A}}$$ |                      |                       |
+|                       | <strong>atom_index</strong>       | <strong>muliken_charge</strong>    |
+| <strong>molecule_name</strong>     |                      |                       |
++=======================+======================+=======================+
+| Names of the molecule | Index of the atom in | muliken charge of the |
+|                       | the molecule         | atom                  |
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+</p>
+<blockquote>
+<p><strong>File 5: potential_energy.csv</strong> - Contains data for the potential
+energy of the molecules.</p>
+<p><strong>Table 5:</strong> Representation of &ldquo;potential_energy.csv&rdquo; &ndash; 2 columns</p>
+</blockquote>
+<p>+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+
+| $$\underline{\mathbf{A}}$$       | <strong>#</strong>                            |
+|                                  |                                   |
+| <strong>molecule_name</strong>                | <strong>potential_energy</strong>              |
++==================================+===================================+
+| Names of the molecule            | Potential energy of the molecule  |
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+</p>
+<blockquote>
+<p><strong>File 6: scalar_coupling_contributions.csv -</strong> Contains data for the
+scalar coupling constants from the training dataset. The scalar
+couplings constants are a sum of four terms: fc, sd, pso, dso.</p>
+<p><strong>Table 6:</strong> Representation of &ldquo;scalar_coupling_contributtions.csv&rdquo; &ndash;
+8 columns (The table is transposed in order to fit all the information
+in 1 table (i.e, the columns and rows are flipped)</p>
+</blockquote>
+<hr>
+<p>$\underline{\mathbf{A}}\mathbf{\ }$<strong>molecule_name</strong>   Names of the molecule</p>
+<hr>
+<p><strong># atom_index_0</strong>                                    Atom indices of the atom pair</p>
+<p><strong># atom_index_1</strong>                                    Atom indices of the atom pair</p>
+<p>$\underline{\mathbf{A}}\mathbf{\ }$<strong>type</strong>            Type of coupling</p>
+<p><strong># fc</strong>                                              Fermi Contact contribution</p>
+<p><strong># sd</strong>                                              Spin-dipolar contribution</p>
+<p><strong># pso</strong>                                             Paramagnetic spin-orbit</p>
+<h2 id="-dso---------------------------------------------diamagnetic-spin-orbit"><strong># dso</strong>                                             Diamagnetic spin-orbit</h2>
+<blockquote>
+<p><strong>File 7: train.csv -</strong> A dataset containing molecular names, atoms,
+and scalar coupling constants to train the predictive model</p>
+<p><strong>Table 7:</strong> Representation of &ldquo;train.csv&rdquo; &ndash; 6 columns</p>
+</blockquote>
+<p>+&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;-+&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;-+
+| <strong>O</strong>  | $$\und     | <strong>#</strong>   | <strong>#</strong>   | $$   | <strong>#</strong>         |
+|        | erline{\ma |          |          | \und |                |
+| <strong>id</strong> | thbf{A}}$$ | <strong>atom_i | <strong>atom_i | erli | <strong>scalar_co    |
+|        |            | ndex_0</strong> | ndex_1</strong> | ne{\ | upling_cont.</strong> |
+|        | <strong>molec    |          |          | math |                |
+|        | ule_name</strong> |          |          | bf{A |                |
+|        |            |          |          | }}$$ |                |
+|        |            |          |          |      |                |
+|        |            |          |          | <strong>ty |                |
+|        |            |          |          | pe</strong> |                |
++========+============+==========+==========+======+================+
+| Sequ   | Names of   | Atom     | Atom     | Type | Scalar         |
+| ential | the        | indices  | indices  | of   | coupling       |
+| ID     | molecule   | of the   | of the   | coup | constant that  |
+| number |            | a        | a        | ling | we want to be  |
+| of     |            | tom-pair | tom-pair |      | able to        |
+| each   |            | creating | creating |      | predict        |
+| sample |            | the      | the      |      |                |
+| obser  |            | coupling | coupling |      |                |
+| vation |            | (at      | (at      |      |                |
+|        |            | om_index | om_index |      |                |
+|        |            | 0 &amp; 1)   | 0 &amp; 1)   |      |                |
++&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;-+&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;-+</p>
+<blockquote>
+<p><strong>File 8: test.csv -</strong> The test set contains the same info as the
+training set, but without the target variable to test the predictive
+model</p>
+<p><strong>Table 8:</strong> Representation of &ldquo;test.csv&rdquo; &ndash; 5 columns</p>
+</blockquote>
+<p>+&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&ndash;+
+| <strong>O</strong>      | $$           | <strong>#</strong>      | <strong>#</strong>      | $$\under  |
+|            | \underline{\ |             |             | line{\mat |
+| <strong>id</strong>     | mathbf{A}}$$ | <strong>ato       | <strong>ato       | hbf{A}}$$ |
+|            |              | m_index_0</strong> | m_index_1</strong> |           |
+|            | <strong>mol        |             |             | <strong>type</strong>  |
+|            | ecule_name</strong> |             |             |           |
++============+==============+=============+=============+===========+
+| Sequential | Names of the | Atom        | Atom        | Type of   |
+| ID number  | molecule     | indices of  | indices of  | coupling  |
+| of each    |              | the         | the         |           |
+| sample     |              | atom-pair   | atom-pair   |           |
+| o          |              | creating    | creating    |           |
+| bservation |              | the         | the         |           |
+|            |              | coupling    | coupling    |           |
+|            |              | (atom_index | (atom_index |           |
+|            |              | 0 &amp; 1)      | 0 &amp; 1)      |           |
++&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&ndash;+</p>
+<p>Table Symbols Legend:</p>
+<blockquote>
+<p>#: Decimal - 22 columns of decimal datatypes</p>
+<p>$\underline{A}$: String &ndash; 12 columns of string datatypes</p>
+<p>#: Integer &ndash; 10 columns of integer datatypes</p>
+<p>O: Other &ndash; 2 columns of ID numbers</p>
+</blockquote>
+<p><strong>Data exploration report</strong></p>
+<p>The purpose is to visualize the distributions of each variable to
+predict the target variable (scalar coupling constant). The data
+exploration report was done in python using Jupyter notebook. The
+exploration report includes created summary statistics and graphical
+representation for essential characteristics for variables in each file
+to find the distribution of each variable and other patterns and
+behaviors. Determining distributions is a critical component in
+developing the appropriate model. Furthermore, the hypothesis for the
+data exploration report is that each dataset, under its respective
+variable, follows a normal distribution. Having a normal distribution
+will allow us to implement an appropriate model to predict the target
+variable.</p>
+<p>Moreover, key variables of each file type are shown below. The numerical
+and graphical analysis is initially required to how to create an
+appropriate machine learning algorithm. In addition, the types of
+J-couplings that exist in the datasets are 1JHC, 2JHC, 3JHC, 1JHN, 2JHN,
+3JHN, 2JHH.</p>
+<p><strong>Test &amp; Train</strong></p>
+<p>Table 1: Test &amp; Train Summary Statistics <em>(Test = A, Train= B)</em></p>
+<hr>
+<pre><code>  **Variable**   **Mean**   **Standard    **Minimum**   **Q1      **Median\   **Q3      **Maximum**
+                            Deviation**                 (25%)**   (50%)**     (75%)**   
+</code></pre>
+<hr>
+<p>A   Atom index 0   13.34      3.27          1.00          11.00     13.00       16.00     28.00</p>
+<p>A   Atom index 1   5.88       5.00          0.00          2.00      5.00        8.00      28.00</p>
+<p>B   Atom index 0   13.36      3.27          1.00          11.00     13.00       16.00     28.00</p>
+<p>B   Atom index 1   5.88       4.99          0.00          2.00      5.00        8.00      28.00</p>
+<h2 id="constant">B   Scalar         15.92      34.93         -44.76        -0.25     2.28        7.39      207.71
+coupling                                                                           <br>
+Constant</h2>
+<p>The atom indexes of 0 and 1 have nearly identical summary statistics
+(mean, standard deviations, min and maximum). Therefore, we can
+accurately use both datasets (testing and training) to develop a machine
+learning algorithm to predict the scalar coupling constant. The testing
+set does not include a scalar coupling constant since that is what we
+are trying to predict. After predicting the scalar coupling constant
+from the testing set, we can then compare it with the training set&rsquo;s
+scalar coupling constant to determine if our model is sufficient in
+predicting the target variable.</p>
+<p><strong>Structures</strong></p>
+<p>Table 2: Structure Summary Statistics</p>
+<hr>
+<p><strong>Variable</strong>   <strong>Mean</strong>   <strong>Standard      <strong>Minimum</strong>   <strong>Q1      <strong>Median\   <strong>Q3      <strong>Maximum</strong>
+Deviation</strong>                   (25%)</strong>   (50%)</strong>     (75%)</strong></p>
+<hr>
+<p>x              -0.10      1.66            -9.23         -0.09     0.05        1.12      9.38</p>
+<p>y              -0.34      1.98            -9.93         -1.83     -0.40       1.37      10.18</p>
+<h2 id="z---------------006------145-------------914---------084------001--------094------789">z              -0.06      1.45            -9.14         0.84      0.01        0.94      7.89</h2>
+<p>From Table 2, we can see that the mean is less than the median for x and
+z. Therefore, based on the numerical results of the summary statistics,
+we can predict that the distribution is slightly skewed to the left. On
+the other hand, y has a mean greater than the median, which indicates
+that the distribution can slightly be skewed to the right. Therefore, to
+better understand the distribution, the data should be graphed to see
+the shape of the distribution of each variable.</p>
+<p>As shown in the figures below, the molecular structure's x (blue)
+coordinate appears to be a unimodal distribution. However, the y (red)
+and z (green) coordinates appear to be multimodal distributions. From
+the figure, the y coordinate shows a distribution with three distinct
+peaks, and the z coordinate shows a distribution with five peaks.</p>
+<p><img src="media/image2.png" alt="">{width=&ldquo;6.5in&rdquo;
+height=&ldquo;1.532856517935258in&rdquo;}<img src="media/image3.png" alt="">{width=&ldquo;6.5in&rdquo;
+height=&ldquo;1.532856517935258in&rdquo;}<img src="media/image4.png" alt="">{width=&ldquo;6.5in&rdquo;
+height=&ldquo;1.532856517935258in&rdquo;}</p>
+<p><em>Figure 1: Histogram to visualize the distribution of dipole moments in
+X, Y and Z direction</em></p>
+<p>Figure 2 illustrates the x coordinate (blue &amp; purple), y coordinate (red
+&amp; dark pink), and z coordinate (maroon &amp; green) for each coupling type.
+Thus, the structures for each coupling type's distribution appear to be
+normally distributed.</p>
+<p><img src="media/image7.png" alt="">{width=&ldquo;6.097561242344707in&rdquo;
+height=&ldquo;6.975610236220472in&rdquo;}<img src="media/image8.png" alt="">{width=&ldquo;6.097561242344707in&rdquo;
+height=&ldquo;6.975610236220472in&rdquo;}<img src="media/image9.png" alt="">{width=&ldquo;6.097561242344707in&rdquo;
+height=&ldquo;6.975610236220472in&rdquo;}<img src="media/image10.png" alt="">{width=&ldquo;6.097561242344707in&rdquo;
+height=&ldquo;6.975610236220472in&rdquo;}</p>
+<p><em>Figure 2: Three different histograms layered into one graph to show the
+distribution of structures in all directions (X,Y,Z) for each molecule
+type (J coupling)</em></p>
+<p><strong>Scalar Coupling Contributions</strong></p>
+<p>Table 3: Scalar Coupling Contributions Summary Statistics</p>
+<hr>
+<p><strong>Variable</strong>    <strong>Mean</strong>   <strong>Standard    <strong>Minimum</strong>   <strong>Q1      <strong>Median\   <strong>Q3      <strong>Maximum</strong>
+Deviation</strong>                 (25%)</strong>   (50%)</strong>     (75%)</strong></p>
+<hr>
+<p>Fermi Contact   15.69      34.41         0.4171        -0.213    2.33        7.47      207.42</p>
+<p>Spin-dipolar    0.08       0.14          -4.420        -0.1437   0.05        0.13      7.67</p>
+<p>Paramagnetic    0.38       0.74          -3.288        -0.03     0.16        0.44      8.20
+spin-orbit</p>
+<h2 id="spin-orbit">Diamagnetic     -0.23      0.92          -6.86         -0.37     -0.01       0.14      1.70
+spin-orbit</h2>
+<p>Table 3 shows the summary statistics for each component for scalar
+coupling contributions. However, what we are primarily concerned about
+is the distribution of the scalar coupling constant. From Table 1
+(test/train table), we can see that the mean (15.92) is roughly three
+times bigger than the median (5.00). Therefore, one can conclude that
+the distribution is heavily skewed to the right. However, graphing the
+scalar coupling constant shows that the distribution is bimodal, which
+dramatically impacts the skewness of the distribution.</p>
+<p>From Figure 3, we can see that the distribution of the scalar coupling
+coefficient is skewed to the left, but the distribution is not perfectly
+unimodal. There is a significantly smaller peak, close to 100, making it
+bimodal. The mode and mean are approximately 0.</p>
+<p><img src="media/image15.png" alt="Chart, histogram Description automaticallygenerated">{width=&ldquo;3.7177132545931757in&rdquo;
+height=&ldquo;2.4303794838145234in&rdquo;}</p>
+<p><em>Figure 3: Histogram of the distribution of scalar coupling coefficient
+in train dataset</em></p>
+<p>In the figures below, there are the distributions of the target (scalar
+coupling constant) for different molecular categories. Three
+distributions are unimodal (2JHC, 3JHC, 2JHH); however, 2JHC is slightly
+skewed to the right. Three distributions are heavily skewed to the left
+(1JHC, 3JHH, 2JHN), and two distributions are bimodal (3JHN, 1JHN).</p>
+<p><img src="media/image16.png" alt="">{width=&ldquo;6.594936570428697in&rdquo;
+height=&ldquo;7.936709317585302in&rdquo;}<img src="media/image17.png" alt="">{width=&ldquo;6.594936570428697in&rdquo;
+height=&ldquo;7.936709317585302in&rdquo;}</p>
+<p><em>Figure 4:Smooth histograms were made to show the distribution for each
+molecule type's scalar coupling constant (J coupling)</em></p>
+<p><strong>Dipole Moment</strong></p>
+<p>Table 4: Dipole Moment Summary Statistics</p>
+<hr>
+<p><strong>Variable</strong>   <strong>Mean</strong>   <strong>Standard       <strong>Minimum</strong>   <strong>Q1      <strong>Median\   <strong>Q3      <strong>Maximum</strong>
+Deviation</strong>                    (25%)</strong>   (50%)</strong>     (75%)</strong></p>
+<hr>
+<p>X              -0.01      2.29             -22.96        -1.35     0.00        1.32      29.59</p>
+<p>Y              0.09       1.74             -9.25         -0.94     0.08        1.16      13.01</p>
+<h2 id="z--------------025-------103--------------603----------025-----012--------090------770">Z              0.25       1.03             -6.03         -0.25     0.12        0.90      7.70</h2>
+<p>The dipole moment summary statistics shows that the mean is
+approximately the same as the median for all the variables (X, Y, Z). In
+other words, we can expect a normal distribution for each of these
+variables. To gain further insight, we should continually graph the data
+points to illustrate the distribution better, as shown in Figure 5.</p>
+<p>The distributions of dipole moment along the X and Y axes are
+approximately normal with a mean of 0. However, the X-axis distribution
+has a more significant standard deviation and range. In contrast, the
+dipole moment along the Z-axis has a slightly skewed distribution
+(skewed to the right), with a secondary peak around 1 in addition to the
+primary peak (mode) above 0.</p>
+<p><img src="media/image20.png" alt="">{width=&ldquo;6.8048775153105865in&rdquo;
+height=&ldquo;2.1463418635170606in&rdquo;}<img src="media/image21.png" alt="">{width=&ldquo;6.8048775153105865in&rdquo;
+height=&ldquo;2.1463418635170606in&rdquo;}<img src="media/image22.png" alt="">{width=&ldquo;6.8048775153105865in&rdquo;
+height=&ldquo;2.1463418635170606in&rdquo;}</p>
+<p><em>Figure 5: Three histograms to show the distribution of dipole moments
+in X, Y and Z direction</em></p>
+<p>In Figure 6, the blue (X), red (Y), and green (Z) distributions
+represent the dipole moment distributions along the X, Y, and Z axes,
+respectively. They all are normal distributions with a mean of 0, but
+the standard deviation increases from Z (green) to Y (red) to X (blue).</p>
+<p><img src="media/image26.png" alt="">{width=&ldquo;6.707317366579177in&rdquo;
+height=&ldquo;6.6951224846894135in&rdquo;}<img src="media/image27.png" alt="">{width=&ldquo;6.707317366579177in&rdquo;
+height=&ldquo;6.6951224846894135in&rdquo;}</p>
+<p><em>Figure 6: Three histograms layered into 1 graph to show the
+distribution of each dipole moment in all directions (X,Y,Z charges) for
+each molecule type (J coupling)</em></p>
+<p><strong>Mullikan Charges</strong></p>
+<p>Table 5: Muliken Charges Summary Statistics</p>
+<p>+&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;+&mdash;&mdash;&ndash;+&mdash;&mdash;&ndash;+&mdash;&mdash;+&mdash;&mdash;-+&mdash;&mdash;+&mdash;&mdash;&ndash;+
+| <em><em>Var   | *       | <em><em>St   | <em><em>Min  | <em><em>Q1 | <em><em>Med | <em><em>Q3 | <strong>Max  |
+| iable</strong> | <em>Mean</em></em> | andard | imum</em></em> | (25  | ian</em></em> | (75  | imum</em></em> |
+|         |         | Devia  |        | %)</em></em> |       | %)</em></em> |        |
+|         |         | tion</em>* |        |      | <strong>(5  |      |        |
+|         |         |        |        |      | 0%)</strong> |      |        |
++=========+=========+========+========+======+=======+======+========+
+| M       | -3      | 0.27   | -0.73  | -0   | -     | 0.13 | 0.72   |
+| ullikan | .26e-10 |        |        | .192 | 0.099 |      |        |
+| Charge  |         |        |        |      |       |      |        |
++&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;+&mdash;&mdash;&ndash;+&mdash;&mdash;&ndash;+&mdash;&mdash;+&mdash;&mdash;-+&mdash;&mdash;+&mdash;&mdash;&ndash;+</p>
+<p>According to Table 5, the mean is significantly smaller than the median.
+This will indicate a distribution that is heavily skewed to the left. We
+can confirm this notion by graphing the Mullikan Charge data points.</p>
+<p>The distribution of Mullikan charges peaks at around 0.175. However,
+further examination of the Figure 7 shows that the distribution with
+small peaks on the tails. Taking this into consideration, the Mullikan
+charge was concluded to be a left-skewed unimodal distribution.</p>
+<p><img src="media/image30.png" alt="Chart, histogram Description automaticallygenerated">{width=&ldquo;4.562522965879265in&rdquo;
+height=&ldquo;3.0126585739282588in&rdquo;}</p>
+<p><em>Figure 7: Smooth histogram to better visualize the distribution of
+Mullikan charge</em></p>
+<p>As one can see from the distributions below, shown in Figure 8, atom
+index 0 and atom index 1 have a quad modal (4 peaks) distribution.
+Additionally, atom indexes 2, 3, and 4 exhibits a similar right-skewed
+multimodal distribution. The means of the distributions tend to decrease
+as the atom index increases. In other words, the Mulliken charges are
+higher for lower atom indices.</p>
+<p><img src="media/image31.png" alt="">{width=&ldquo;6.585366360454943in&rdquo;
+height=&ldquo;5.64634186351706in&rdquo;}<img src="media/image32.png" alt="">{width=&ldquo;6.585366360454943in&rdquo;
+height=&ldquo;5.64634186351706in&rdquo;}<img src="media/image33.png" alt="">{width=&ldquo;6.585366360454943in&rdquo;
+height=&ldquo;5.64634186351706in&rdquo;}<img src="media/image34.png" alt="">{width=&ldquo;6.585366360454943in&rdquo;
+height=&ldquo;5.64634186351706in&rdquo;}<img src="media/image35.png" alt="">{width=&ldquo;6.585366360454943in&rdquo;
+height=&ldquo;5.64634186351706in&rdquo;}</p>
+<p><em>Figure 8: Visualizing distribution of Mullikan charge for each atom
+index</em></p>
+<p><strong>Potential Energy</strong></p>
+<p>Table 6: Potential Energy Summary Statistics</p>
+<hr>
+<p><strong>Variable</strong>   <strong>Mean</strong>   <strong>Standard     <strong>Minimum</strong>   <strong>Q1      <strong>Median\   <strong>Q3      <strong>Maximum</strong>
+Deviation</strong>                  (25%)</strong>   (50%)</strong>     (75%)</strong></p>
+<hr>
+<p>Potential      -410.95    39.84          -714.63       -438.00   -416.92     -387.22   -40.52
+Energy</p>
+<hr>
+<p>The summary statistics table for potential energy indicates a mean that
+is approximately equal to the median. Therefore, we can predict a normal
+distribution of data. Figure 9, confirms this notion by illustrating a
+normal distribution of data points when graphed. The distribution of
+potential energy of the molecules is approximately normal with a mean of
+around -400 shown in Figure 9.</p>
+<p><img src="media/image41.png" alt="Chart, histogram Description automaticallygenerated">{width=&ldquo;5.053887795275591in&rdquo;
+height=&ldquo;3.2278477690288714in&rdquo;}</p>
+<p><em>Figure 9: Histogram of the potential energy for all the molecules</em></p>
+<p><strong>­</strong> Figure 10 illustrates the distributions of potential energy for
+each molecule type. One can see that the distributions are very
+different for each molecule type. However, the general distribution
+shape of each kind of molecule type is roughly normal.</p>
+<p><img src="media/image42.png" alt="">{width=&ldquo;6.5in&rdquo;
+height=&ldquo;6.310416666666667in&rdquo;}<img src="media/image42.png" alt="">{width=&ldquo;6.5in&rdquo;
+height=&ldquo;6.310416666666667in&rdquo;}</p>
+<p><em>Figure 10: Six histograms visualizing the distribution of potential
+energy for each molecule type (J Coupling)</em></p>
+<p><strong>Magnetic Shielding Tensors</strong></p>
+<p>Table 7: Magnetic Shielding Tensors Summary Statistics</p>
+<hr>
+<p><strong>Variable</strong>   <strong>Mean</strong>   <strong>Standard    <strong>Minimum</strong>   <strong>Q1      <strong>Median\   <strong>Q3      <strong>Maximum</strong>
+Deviation</strong>                 (25%)</strong>   (50%)</strong>     (75%)</strong></p>
+<hr>
+<p>XX             68.70      114.77        -3452.00      28.04     31.90       147.94    425.40</p>
+<p>YX             -0.12      36.80         -758.29       -3.339    0.00        3.37      1080.02</p>
+<p>ZX             0.08       34.05         -738.96       -2.544    0.00        2.61      662.04</p>
+<p>XY             -0.013     36.63         -0.09         -3.204    0.00        3.23      1273.98</p>
+<p>YY             65.34      106.35        -2146.60      27.18     31.73       136.02    425.46</p>
+<p>ZY             -0.016     33.68         -652.32       -2.79     0.00        2.84      673.91</p>
+<p>XZ             -0.08      34.77         -743.25       -2.484    0.00        2.55      863.36</p>
+<p>YZ             0.04       34.15         -654.22       -2.80     0.00        2.87      738.41</p>
+<h2 id="zz-------------8275------8550----------94860-------2735-----3379-------14168----55688">ZZ             82.75      85.50         -948.60       27.35     33.79       141.68    556.88</h2>
+<p>According to Table 7, every variable has approximately the same mean and
+median values value, except for variables YY and ZZ, which indicates a
+normal distribution. We can also predict that the YY and ZZ variables
+are skewed to the right since the mean is greater than the median.
+However, further analyzing the table shows outliers when looking at the
+minimum and maximum values. Therefore, outliers need to be removed in
+this data set to illustrate the distribution of each variable within the
+dataset.</p>
+<p>The outliers were removed from the magnetic shielding tensor data to
+accurately visualize the distributions of each magnetic shielding
+variation, shown in Figure 11. The distributions of magnetic shielding
+in each direction seem to be roughly linear with a mean of 0.
+Furthermore, some of graphs shows the distribution with steep, sharp
+slopes from the peak to the tails (i.e., YX), while others have smooth,
+bulgy tails (i.e., ZY). All of variables have unique shapes in their
+distribution, however most of them can be considered under one of these
+two categories: steep sharp slopes or smooth bulgy tails.</p>
+<p><img src="media/image44.png" alt="">{width=&ldquo;7.107595144356956in&rdquo;
+height=&ldquo;7.012658573928259in&rdquo;}<img src="media/image45.png" alt="">{width=&ldquo;7.107595144356956in&rdquo;
+height=&ldquo;7.012658573928259in&rdquo;}<img src="media/image46.png" alt="">{width=&ldquo;7.107595144356956in&rdquo;
+height=&ldquo;7.012658573928259in&rdquo;}<img src="media/image47.png" alt="">{width=&ldquo;7.107595144356956in&rdquo;
+height=&ldquo;7.012658573928259in&rdquo;}<img src="media/image48.png" alt="">{width=&ldquo;7.107595144356956in&rdquo;
+height=&ldquo;7.012658573928259in&rdquo;}<img src="media/image49.png" alt="">{width=&ldquo;7.107595144356956in&rdquo;
+height=&ldquo;7.012658573928259in&rdquo;}<img src="media/image50.png" alt="">{width=&ldquo;7.107595144356956in&rdquo;
+height=&ldquo;7.012658573928259in&rdquo;}<img src="media/image51.png" alt="">{width=&ldquo;7.107595144356956in&rdquo;
+height=&ldquo;7.012658573928259in&rdquo;}<img src="media/image52.png" alt="">{width=&ldquo;7.107595144356956in&rdquo;
+height=&ldquo;7.012658573928259in&rdquo;}</p>
+<p><em>Figure 11: Visualizing the distribution of the magnetic shield tensors
+in each direction combination without outliers using smooth histogram</em></p>
+<p>After examining the dataset, we can conclude that our hypothesis was
+correct, where each variable followed a normal distribution. The only
+exception to this was the data for magnetic shielding tensors, where we
+had to take out the outlier for the data to follow a normal
+distribution.</p>
+<p><strong>Data quality report</strong></p>
+<p>The goal for the initial exploratory report was to visualize the
+distributions of the critical variables from each file by itself and
+when grouped by their respective coupling types. Visualizations were
+created for all scenarios necessary to begin designing a machine
+learning model. All data were reviewed beforehand by CHAMPS for data
+accuracy (i.e., no missing data, valid data points). Therefore, outliers
+were deemed necessary to keep in the initial data collection report
+because each data point is significant in the overall goal of this
+project. If we removed outliers, our future model might not accurately
+predict molecular compounds with more extreme data points. However, the
+outliers were only removed for the magnetic shielding tensors to
+visualize their distributions accurately.</p>
+<p>Additionally, a lack of scientific understanding of each variable may
+hinder the creation of an accurate model. In other words, one may
+struggle to figure out how each variable impacts one another, which
+could potentially make the algorithm difficult to code. In addition, the
+data sets contain a very large quantity of datapoints allowing the
+dataset to be resistant to outliers. Therefore, there were no issues in
+determining the distribution shape for each variable except for the
+magnetic shielding tensor data. However, the presence of outliers was
+present in the data, therefore two models can be made, one including
+outliers and one excluding outliers, to determine which method yields
+the best results. Moreover, an advanced understanding of chemical
+knowledge is crucial when designing the model. Therefore, it is my
+recommendation to hire a chemical expert to assist with the coding team.
+An optimal candidate for this project would be a coder with machine
+learning experience with high chemical knowledge/understanding. Another
+limitation to this project is the multitude of data separated into
+different files. Combining the data into one file may save time and
+prove beneficial for this project's success; however, merging the data
+is not necessary. Furthermore, no other errors or concerns are apparent
+in the initial data exploration process.</p>
+<p><strong>References</strong></p>
+<p><em>About Us</em>. About us - EPSRC website. (n.d.). Retrieved October 18,
+2021, from <a href="https://epsrc.ukri.org/about/">https://epsrc.ukri.org/about/</a>. </p>
+<p>Bettenhausen, C. A. (n.d.). <em>Bruker installs world's first 1.2 GHz
+NMR</em>. Cen.acs.org. Retrieved October 18, 2021, from
+<a href="https://cen.acs.org/business/instrumentation/Bruker-installs-12-GHz-NMR/98/i19">https://cen.acs.org/business/instrumentation/Bruker-installs-12-GHz-NMR/98/i19</a>. </p>
+<p>Bi, Q., Goodman, K. E., Kaminsky, J., &amp; Lessler, J. (2019). What is
+machine learning? A Primer for the epidemiologist. <em>American Journal of
+Epidemiology</em>. <a href="https://doi.org/10.1093/aje/kwz189">https://doi.org/10.1093/aje/kwz189</a> </p>
+<p>Blaber , M. (2020, August 21). <em>Dipole moments</em>. Chemistry LibreTexts.
+Retrieved October 18, 2021, from
+<a href="https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules">https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules</a>_(Physical_and_Theoretical_Chemistry)/Physical_Properties_of_Matter/Atomic_and_Molecular_Properties/Dipole_Moments. </p>
+<p>Bratholm, L. A., Gerrard, W., Anderson, B., Bai, S., Choi, S., Dang, L.,
+Hanchar, P., Howard, A., Kim, S., Kolter, Z., Kondor, R., Kornbluth, M.,
+Lee, Y., Lee, Y., Mailoa, J. P., Nguyen, T. T., Popovic, M., Rakocevic,
+G., Reade, W., &hellip; Glowacki, D. R. (2021). A community-powered search of
+machine learning strategy space to find NMR property prediction
+models. <em>PLOS ONE</em>, <em>16</em>(7).
+<a href="https://doi.org/10.1371/journal.pone.0253612">https://doi.org/10.1371/journal.pone.0253612</a> </p>
+<p><em>Champs</em>. CHAMPS. (n.d.). Retrieved October 18, 2021, from
+<a href="https://champsproject.com/">https://champsproject.com/</a>. </p>
+<p>Davis, B. (2020, October 17). <em>Home</em>. MVOrganizing. Retrieved October
+18, 2021, from <a href="https://www.mvorganizing.org/are-there-6-dimensions/">https://www.mvorganizing.org/are-there-6-dimensions/</a>. </p>
+<p>Facelli, J. C. (2011, May). <em>Chemical shift tensors: Theory and
+application to molecular structural problems</em>. Progress in nuclear
+magnetic resonance spectroscopy. Retrieved October 18, 2021, from
+<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3058154/%5C/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3058154/%5C/</a>. </p>
+<p>Gokhale, P., Ding, Y., Propson, T., Winkler, C., Leung, N., Shi, Y.,
+Schuster, D. I., Hoffmann, H., &amp; Chong, F. T. (2019). Partial
+compilation of variational algorithms for noisy intermediate-scale
+quantum machines. <em>Proceedings of the 52nd Annual IEEE/ACM International
+Symposium on Microarchitecture</em>.
+<a href="https://doi.org/10.1145/3352460.3358313">https://doi.org/10.1145/3352460.3358313</a> </p>
+<p><em>Graph networks as a universal machine learning framework ...</em> (n.d.).
+Retrieved October 18, 2021, from
+<a href="https://materialsvirtuallab.org/pubs/10.1021_acs.chemmater.9b01294.pdf">https://materialsvirtuallab.org/pubs/10.1021_acs.chemmater.9b01294.pdf</a>. </p>
+<p>Hatzakis, E. (2018). Nuclear magnetic resonance (NMR) spectroscopy in
+Food Science: A comprehensive review. <em>Comprehensive Reviews in Food
+Science and Food Safety</em>, <em>18</em>(1), 189&ndash;220.
+<a href="https://doi.org/10.1111/1541-4337.12408">https://doi.org/10.1111/1541-4337.12408</a> </p>
+<p>Kaseman, D. (2020, August 21). <em>J-coupling (scalar)</em>. Chemistry
+LibreTexts. Retrieved October 18, 2021, from
+<a href="https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules">https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules</a>_(Physical_and_Theoretical_Chemistry)/Spectroscopy/Magnetic_Resonance_Spectroscopies/Nuclear_Magnetic_Resonance/NMR_-_Theory/NMR_Interactions/J-Coupling_(Scalar). </p>
+<p>Mullen, S. (2017, October 31). <em>Frequently asked questions: NMR
+Structural Biology Facility &amp; Biophysical Core Facility</em>. NMR Structural
+Biology Facility Biophysical Core Facility. Retrieved October 18, 2021,
+from
+<a href="https://health.uconn.edu/structural-biology/frequently-asked-questions/">https://health.uconn.edu/structural-biology/frequently-asked-questions/</a>. </p>
+<p>National Research Council. (n.d.). <em>&quot;Beyond the molecular frontier:
+Challenges for chemistry and Chemical Engineering&quot; at nap.edu</em>.
+National Academies Press: OpenBook. Retrieved October 18, 2021, from
+<a href="https://www.nap.edu/read/10633/chapter/6">https://www.nap.edu/read/10633/chapter/6</a>. </p>
+<p>Russom, P. (2011). BIG DATA ANALYTICS. <em>TDWI BEST PRACTICES REPORT</em>. </p>
+<p>Ukri. (n.d.). <em>Gateway to research (GTR) - explore publicly funded
+research</em>. GtR. Retrieved October 18, 2021, from <a href="https://gtr.ukri.org/">https://gtr.ukri.org/</a>. </p>
+<p>Vakkuri, V., &amp; Kemell, K.-K. (2019). Implementing AI ethics in practice:
+An empirical evaluation of the resolvedd strategy. <em>Lecture Notes in
+Business Information Processing</em>, 260&ndash;275.
+<a href="https://doi.org/10.1007/978-3-030-33742-1_21">https://doi.org/10.1007/978-3-030-33742-1_21</a> </p>
+<p>Weinbaum, C., Landree, E., Blumenthal, M., Piquado, T., &amp; Gutierrez, C.
+(2019). Ethics in scientific research: An examination of ethical
+principles and emerging topics. <a href="https://doi.org/10.7249/rr2912">https://doi.org/10.7249/rr2912</a> </p>
+<p><em>Welcome to Amerian Chemical Society</em>. American Chemical Society.
+(n.d.). Retrieved October 18, 2021, from
+<a href="https://www.acs.org/content/acs/en.html">https://www.acs.org/content/acs/en.html</a>. </p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="https://aminfesharaki97.github.io/Amin_Portfolio/tags/python" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Python</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="https://aminfesharaki97.github.io/Amin_Portfolio/post/project-3/">Predicting House Sales</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://aminfesharaki97.github.io/Amin_Portfolio" >
+    &copy;  Amin Fesharaki 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+    <a href="https://www.linkedin.com/in/aminfesh" target="_blank" class="LinkedIn ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+    <a href="https://github.com/aminfesharaki97" target="_blank" class="Github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R on Amin Fesharaki</title>
+    <link>https://aminfesharaki97.github.io/Amin_Portfolio/tags/r/</link>
+    <description>Recent content in R on Amin Fesharaki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 Jun 2022 11:00:59 -0400</lastBuildDate><atom:link href="https://aminfesharaki97.github.io/Amin_Portfolio/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Predicting Full Power Output from a Combined Cycle Power Plant</title>
+      <link>https://aminfesharaki97.github.io/Amin_Portfolio/post/project-9/</link>
+      <pubDate>Mon, 27 Jun 2022 11:00:59 -0400</pubDate>
+      
+      <guid>https://aminfesharaki97.github.io/Amin_Portfolio/post/project-9/</guid>
+      <description>Summary:
+Exploratory data analysis, data pre-processing, modeling, and evaluated data from a combined cycle power plant. Linear and nonlinear regression models were built, optimized, and compared to find the optimal modeling strategy. Models include ordinary least squares, partial least squares, principle component analysis, penalized linear models, ridge and lasso regression, support vector machines, K-nearest neighbor multivariate adaptive regression splines, random forest, boosted and bagged trees, cubist regression, and neural network. Random forest tuned by out-of-bag estimates outpeformed all models with a root mean square error score of 3.</description>
+    </item>
+    
+    <item>
+      <title>Predicting Student Performance</title>
+      <link>https://aminfesharaki97.github.io/Amin_Portfolio/post/project-1/</link>
+      <pubDate>Mon, 06 Dec 2021 10:58:08 -0400</pubDate>
+      
+      <guid>https://aminfesharaki97.github.io/Amin_Portfolio/post/project-1/</guid>
+      <description>Summary:
+Created linear regression models to predict the performance of a student based on various aspects of a student’s background, abilities, skills, and past performance. The regression models were leveraged to identify what are the factors that have a significant impact on student performance and how powerful that impact is. Implemented multiple types of classification algorithms including C5 classification, CART, and neural networks, to predict student performance on a pass-fail basis based on factors that may not have been conducive for regression analysis.</description>
+    </item>
+    
+  </channel>
+</rss>

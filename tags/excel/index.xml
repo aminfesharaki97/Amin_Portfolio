@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Excel on Amin Fesharaki</title>
+    <link>https://aminfesharaki97.github.io/Amin_Portfolio/tags/excel/</link>
+    <description>Recent content in Excel on Amin Fesharaki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://aminfesharaki97.github.io/Amin_Portfolio/tags/excel/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Modeling TailPipe Emissions</title>
+      <link>https://aminfesharaki97.github.io/Amin_Portfolio/post/project-5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aminfesharaki97.github.io/Amin_Portfolio/post/project-5/</guid>
+      <description>Summary:
+Created a multiple regression model with an R2 value of 98.86% to statistically investigate the association of tailpipe CO2 emissions after controlling specific vehicle characteristics. Performed statistical analysis to investigate tailpipe CO2 emissions based on vehicle characteristics Methods include descriptive statistics, bivariate frequency, associations, probability density function, pearson correlation coefficients, pearson’s chi-square test, multicollinearity, and regression modeling The final model resulted in a p-value less than .0001 with a confidence level of 95% and a R2 value of 98.</description>
+    </item>
+    
+  </channel>
+</rss>

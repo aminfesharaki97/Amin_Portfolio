@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Modeling TailPipe Emissions | Amin Fesharaki</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Investigation of Carbon Dioxide Emissions based on Vehicle Characteristcs">
+    <meta name="generator" content="Hugo 0.101.0" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="https://aminfesharaki97.github.io/Amin_Portfolio/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Modeling TailPipe Emissions" />
+<meta property="og:description" content="Investigation of Carbon Dioxide Emissions based on Vehicle Characteristcs" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aminfesharaki97.github.io/Amin_Portfolio/post/project-5/" /><meta property="article:section" content="post" />
+
+<meta property="og:site_name" content="Amin Fesharaki" />
+
+<meta itemprop="name" content="Modeling TailPipe Emissions">
+<meta itemprop="description" content="Investigation of Carbon Dioxide Emissions based on Vehicle Characteristcs">
+
+<meta itemprop="wordCount" content="6003">
+<meta itemprop="keywords" content="Excel," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Modeling TailPipe Emissions"/>
+<meta name="twitter:description" content="Investigation of Carbon Dioxide Emissions based on Vehicle Characteristcs"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  <header class="cover bg-top" style="background-image: url('https://aminfesharaki97.github.io/Amin_Portfolio/images/87847_emissions-repair-in-portland-oregon-350x233.rev.1617039140.jpg');">
+    <div class="bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://aminfesharaki97.github.io/Amin_Portfolio/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Amin Fesharaki
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://aminfesharaki97.github.io/Amin_Portfolio/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://aminfesharaki97.github.io/Amin_Portfolio/code/" title="Code page">
+              Code
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://aminfesharaki97.github.io/Amin_Portfolio/post/" title="Projects page">
+              Projects
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+<div class="ananke-socials">
+  
+    <a href="https://www.linkedin.com/in/aminfesh" target="_blank" class="LinkedIn ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+    <a href="https://github.com/aminfesharaki97" target="_blank" class="Github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Modeling TailPipe Emissions</h1>
+          
+            <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+              Investigation of Carbon Dioxide Emissions based on Vehicle Characteristcs
+            </h2>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        PROJECTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Modeling TailPipe Emissions</h1>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p><strong>Summary</strong>:</p>
+<ul>
+<li>Created a multiple regression model with an R2 value of 98.86% to statistically investigate the association of tailpipe CO2 emissions after controlling specific vehicle characteristics.</li>
+<li>Performed statistical analysis to investigate tailpipe CO2 emissions based on vehicle characteristics</li>
+<li>Methods include descriptive statistics, bivariate frequency, associations, probability density function, pearson correlation coefficients, pearson’s chi-square test, multicollinearity, and regression modeling</li>
+<li>The final model resulted in a p-value less than .0001 with a confidence level of 95% and a R2 value of 98.86% indicating that the final multiple regression model explains tailpipe CO2 emission variance adequately</li>
+</ul>
+<p><a href="https://github.com/aminfesharaki97/Tailpipe-CO2-Emission-">Link To GitHub Repository</a></p>
+<p><strong>Abstract</strong></p>
+<p>The objective of this analysis is to statistically investigate the
+association of tailpipe carbon dioxide emissions in grams per mile to
+annual primary-fuel petroleum consumption in barrels after controlling
+for combined miles-per-gallon for the primary fuel type, vehicle
+manufacturer, make, model, engine displacement, engine cylinders,
+transmission type, and combined luggage and passenger volume in cubic
+feet. The hypothesis is that multiple linear regression can accurately
+model CO~2~ emissions with critical variables from the vehicle
+characteristics. A bivariate analysis found that the proportion of
+regular gasoline is higher than the population; regular gasoline creates
+a significant and most considerable impact when analyzing CO~2~ tailpipe
+emissions for all vehicle types. Investigating the associations showed
+that unknown vehicles contribute the most among all vehicle types and
+are statistically significant with high associations to emissions, while
+regular gasoline has the highest association relative to all emission
+levels. Statistical correlations found that annual petroleum consumption
+is most strongly correlated with CO~2~ emissions, while primary fuel
+type had the weakest correlation. The final model created removed
+significant multicollinearity concerns but still exhibited some level of
+multicollinearity. According to the final model, the model's intercept
+was 60.31 grams per mile of tailpipe CO~2~ emissions. The coefficients
+for petroleum consumption, combined miles per gallon, engine
+displacement, cylinders, and volume are respectively 24.43, -1.257,
+1.51, 0.51, and 0.00075. All predictor variables resulted in p-values
+&lt;.0001 except volume, which was .6461. The final model had five degrees
+of freedom and an F value of 402,618, resulting in a p-value less than
+.0001 with a confidence level of 95%. These findings indicate that a
+final multiple regression model explains tailpipe CO~2~ emission
+variance adequately.</p>
+<p><em>Key Words:</em> Carbon Dioxide Emissions, Fuel Economy, Vehicle
+Characteristic, Statistical Analysis</p>
+<h1 id="list-of-equations">List of Equations</h1>
+<p><strong>Equation 1:</strong> Generalized Model to Predict Tailpipe Carbon Dioxide
+Emissions</p>
+<p><strong>Equation 2:</strong> Probability Density Function Formula for Tailpipe Carbon
+Dioxide Emissions</p>
+<p><strong>Equation 3:</strong> Original Multiple Regression Model</p>
+<p><strong>Equation 4:</strong> Final Multiple Regression Model</p>
+<h1 id="list-of-tables">List of Tables</h1>
+<p><strong>Table 1:</strong> Description of each research variable</p>
+<p><strong>Table 2:</strong> Descriptive Statistics for Continuous Vehicle
+Characteristics</p>
+<p><strong>Table 3:</strong> Characteristics of 43,177 Sample Vehicle Models by Primary
+Fuel Type</p>
+<p><strong>Table 4:</strong> Association of Emissions Category by Fuel Type and Other
+Characteristics</p>
+<p><strong>Table 5:</strong> Pearson Correlation Coefficients Matrix</p>
+<p><strong>Table 6:</strong> Two-way Contingency Table of Vehicle Type and Emissions
+Category</p>
+<p><strong>Table 7:</strong> Expected Value Table for Vehicle Types and Emission
+Category</p>
+<p><strong>Table 8:</strong> Chi-Squared Table for Emission Category and Vehicle Type</p>
+<h1 id="list-of-figures">List of Figures</h1>
+<p><strong>Figure 1:</strong> Tailpipe CO2 Emissions in Grams Per Mile Relative to
+Engine Cylinders</p>
+<p><strong>Figure 2:</strong> Probability Density Function of Carbon Dioxide Tailpipe
+Emissions</p>
+<h1 id="introduction">Introduction</h1>
+<h2 id="background">Background</h2>
+<p>Greenhouse gas emissions have been one of the primary factors to global
+warming and climate change. Evidence suggests that vehicle
+transportation caused 29% of the total greenhouse gas in 2019 (U.S.
+Energy Information Administration, 2019). According to Salvi et al.
+(2013), annual primary fuel consumption positively correlates to carbon
+dioxide emissions, meaning we can decrease CO~2~ emissions by decreasing
+petroleum consumption. This notion suggests reducing carbon dioxide
+emissions by roughly 20% if every automobile manufacturer designed
+fuel-efficient vehicles. Awareness of the relationship between carbon
+dioxide emissions and petroleum consumption gives way to more research
+and hopefully identifying better ways to design cars to reduce CO~2~
+tailpipe emissions. Therefore, a model should be developed for CO~2~
+emissions in an effort for manufacturers to reduce carbon emissions from
+their cars when designing a new vehicle. Additionally, consumers may
+also be interested in viewing the model when deciding what car to buy to
+reduce their carbon footprint.</p>
+<h2 id="purpose">Purpose</h2>
+<p>The research objective for this study is to statistically investigate
+the association of primary fuel tailpipe carbon dioxide emissions in
+grams per mile to annual primary-fuel petroleum consumption in barrels
+after controlling for combined miles-per-gallon for the primary fuel
+type, vehicle manufacturer, engine displacement, transmission type,
+engine cylinders, and combined luggage and passenger volume in cubic
+feet. The goal is to create a model that accurately predicts tailpipe
+CO~2~ emissions-based vehicle characteristics to assist automobile
+manufacturers with reducing their carbon footprint when designing new
+vehicles. The hypothesis is that multiple linear regression can predict
+tailpipe carbon dioxide emissions.</p>
+<h2 id="generalized-objective-formula">Generalized Objective Formula</h2>
+<p>To statistically analyze the research objective, a generalized model was
+made to investigate the independent variables that impact tailpipe CO~2~
+emissions, as seen in (1). The hypothesis is that multiple linear
+regression can accurately model CO~2~ emissions with critical variables
+from the vehicle characteristics. Furthermore, the goal for the model,
+using a linear combination of vehicle characteristics, constant, and an
+error term ($\epsilon)$ will attempt to quantify each characteristic
+impact on carbon dioxide emissions and predict carbon dioxide emissions.</p>
+<p>$${CO}<em>{2} = \ \beta</em>{1} + \beta_{2}PetroleoumConsumption + \beta_{3}CombinedMPG + \beta_{4}VehicleManufacturer + \beta_{5}EngineDisplacement + \beta_{6}Cylinders + \beta_{7}Volume + \beta_{8}VehicleType\binom{1 = Unknown}{\begin{matrix}
+2 = Hatchback \
+3 = Passenger\ 2 - Door \
+4 = Passenger\ 4 - Door \
+\end{matrix}} + \beta_{9}TransmissionType\binom{1 = Automatic}{2 = Manual} + \beta_{10}FuelType\binom{1 = Premium\ Gasoline}{\begin{matrix}
+2 = Midgrade\ Gasoline \
+3 = Regular\ Gasoline \
+\begin{matrix}
+4 = Diesel \
+5 = Natural\ Gas \
+6 = Electricity \
+\end{matrix} \
+\end{matrix}} + \epsilon$$</p>
+<p>(1)</p>
+<h1 id="method">Method</h1>
+<h2 id="heading"></h2>
+<h2 id="data-collection">Data Collection</h2>
+<p>This study uses data downloaded from FuelEconomoy.gov, which includes
+various characteristics of 43,177 vehicle models from 1984 to 2021.
+Statistical data analysis was performed using a Lenovo ThinkStation P330
+Tower with an Intel Xeon E-2186G 6 Core Processor on Windows 10 Pro for
+Workstations 64. In addition, the software used to carry out data
+calculations were MATLAB R2020b, Microsoft Excel for Microsoft Office
+365 (64-bit), SAS Enterprise Guide 7.1 (64-bit), and Tableau 2020.3. The
+CSV was opened in Microsoft Excel to convert the data into a table
+format with emissions, fuel type, make, transmission type, vehicle type
+categories. The final combined table was imported to MATLAB for
+distribution curve fitting and SAS for statistical analysis, including
+bivariate frequencies, Pearson correlation coefficients, association,
+and chi-squared testing.</p>
+<h2 id="population-characteristics">Population Characteristics</h2>
+<p>The data initially consisted of 43,177 samples. After removing the blank
+and null values through SAS, a total of 42,917 samples were used for
+descriptive statistical analysis. The samples include vehicles from 138
+different manufacturers. Important population characteristics have been
+identified for each sample. Barrels08 represents the annual petroleum
+consumption in barrels for each primary fuel type: premium gasoline,
+midgrade gasoline, regular gasoline, diesel, natural gas, and
+electricity. Combo08 represents the combined MPG, displ indicates engine
+displacement in liters, and cylinders show each vehicle's number of
+engine cylinders. Transmission types include manual or automatic for
+each vehicle sample.</p>
+<p>Moreover, the dataset also includes unknown vehicle types, hatchback,
+passenger two-door, and passenger four-door, and the vehicle volume in
+cubic feet. However, it is essential to note that FuelEconomy.gov did
+not require interior volume dimensions for two-seater passenger cars or
+any vehicle classified as trucks: vans, pickups, special purpose
+vehicles, minivans, and sport utility vehicles. Lastly, the vehicles are
+grouped into the following categories based on how much tailpipe
+emissions were emitted: ultra-low emissions, very-low emissions, low
+emissions, standard, polluter, and gross polluter. All research fields
+(variables) with their respective field description are discussed in
+Table 1.</p>
+<h2 id="descriptive-statistics">Descriptive Statistics</h2>
+<p>The continuous data variables include CO~2~ emissions, petroleum
+consumption, volume, engine displacement. The discrete variables in the
+dataset are the combined MPG / MPGe and engine cylinders. The mean value
+of CO~2~ Tailpipe emissions was 465.54 grams per mile with a standard
+deviation of 119.88, indicating a positively skewed distribution. For
+the annual petroleum consumption in barrels, the mean value was 17.25,
+with a standard deviation of 4.49. The conversion from barrels to
+gallons is 1 barrel equals 42 gallons. In addition, the mean value of
+volume was 66.88 cubic feet with a standard deviation of 69.12. As
+mentioned previously, this value is not accurate since interior
+dimensions for two passenger vehicles and trucks were not required to be
+recorded in the sample set. Lastly, the mean value of engine
+displacement was 3.29 liters with a standard deviation of 1.36. In
+addition to descriptive statistics for each variable**,** Table 2 shows
+the ranges for each variable.</p>
+<p>Categorical variables of interest include primary fuel type, vehicle
+type, transmission type, manufacturer. From analyzing the entire dataset
+of 43,177 samples, primary fuel types included 29.6% premium gasoline,
+0.3% midgrade gasoline, 66.5% regular gasoline, 2.8% diesel, 0.1%
+natural gas, and 0.6% electricity. Vehicle types include 11.7%
+hatchback, 14.8% passenger two-door, 27.8% passenger four-door, and
+45.7% were considered unknown. Transmission types include 70.0%
+automatic and 30.0% manual. Furthermore, the emissions category is an
+ordinal value based on the value of each car's respective tailpipe
+CO~2~ emissions. Emission level categories are as follows: 0.72%
+ultra-low emission, 0.89% very-low emission, 12.87% low emission, 68.42%
+standard, 13.66% polluter, and 3.41% gross polluter. The emission
+category in which each vehicle fell into was determined by the
+population mean and standard deviation, as shown in Table 3.</p>
+<p>The number of cylinders is a discrete variable, and therefore
+determining the mean and standard deviation holds no value. Thus, a box
+was made for tailpipe CO~2~ Emissions relative to the number of engine
+cylinders, shown in Figure 1, to analyze the discrete variable further.
+Electric vehicles are not included in the visualization since electric
+cars typically have no cylinders. Furthermore, there are only 61 data
+points of 2-cylinder vehicles, including Mazda RX7/8 models and BMW I3
+models. In addition, the 16-cylinder vehicles were exclusive to only the
+Bugatti manufacturer with only 13 data points. Thus, the 2-cylinder and
+16-cylinder vehicles will not be compared to the 3-cylinder, 4-cylinder,
+5-cylinder, 6-cylinder, 8-cylinder, 10-cylinder, and 12-cylinder
+vehicles. Moreover, the average tailpipe CO~2~ emissions increase as the
+number of cylinders increases, as seen in Figure 1**.** Excluding
+2-cylinder and 16-cylinder vehicles, 3-cylinder vehicles showed the
+slightest variance among all other cylinder values and had the lowest
+average tailpipe emissions. After 3-cylinder vehicles, the 5-cylinder
+vehicles have the second-lowest variation with a low number of outliers.
+By contrast, the 4-, 5-, 6-, 8-, 10-, 12- cylinder models exhibit
+significant variations across all vehicle types with many more sample
+points.</p>
+<h2 id="bivariate-frequency">Bivariate Frequency</h2>
+<p>Table 3 represents the bivariate frequency of four different vehicle
+types and two different transmission types across six categories of fuel
+types for a total of 43,177 samples. Within the table, the independent
+variables are unknown, hatchback, passenger two-door, and passenger
+four-door vehicle types and automatic and manual transmission types. In
+contrast, the dependent variables are the fuel types of premium
+gasoline, midgrade gasoline, regular gasoline, diesel, natural gas, and
+electricity. The percentages of each variable for the total population
+are shown in Table 3. There are proportionally more automatic
+transmissions than manual transmissions across all fuel types regarding
+transmission types.</p>
+<p>Moreover, premium gasoline accounts for 12,801 samples (29.64% of the
+total population), with passenger four-door vehicle types having the
+most significant proportion of 37.8%. Unknown vehicles and passenger
+two-door vehicles have similar proportions of 27.3% and 24.7%,
+respectively. Midgrade gasoline has 130 samples (0.30% of the total
+population), with unknown vehicle types having the most significant
+proportion of 69.2% and passenger four-door having the second largest
+proportion of 21.5%. Regular gasoline has 28,733 samples (66.54% of the
+total population), with unknown vehicle types having the majority
+proportion of 53.4% and passenger four-door having the second highest of
+21.5%. Diesel accounts for 1,196 samples (2.77% of the total
+population), with unknown having the largest proportion of 57.3% while
+the passenger four-door has the second-highest proportion of 21.5%.
+Natural gas has the lowest sample points of 60 (0.14% of the total
+population), with unknown having the largest proportion of 56.7% and
+passenger four-door with 38.3%. Lastly, electric vehicles have a total
+of 257 sample points (0.60% of the total population), with hatchbacks
+having the largest proportion, 40.9%, and the second highest being
+unknown vehicle types with 32.7%.</p>
+<p>In other words, unknown vehicles account for the highest percentage of
+all vehicle types for midgrade gasoline, regular gasoline, diesel, and
+natural gas. Furthermore, regular gasoline has the highest proportion
+(66.54%) across all other fuel types. Thus, the proportion of regular
+gasoline is higher than the population; regular gasoline creates a
+significant and most considerable impact when analyzing CO~2~ tailpipe
+emissions for all vehicle types. The high bivariate frequency can cause
+the average to sway more in favor of regular gasoline towards its
+average tailpipe emission value. In addition, the p-value is extremely
+low (&lt;.0001) for all these proportions, which indicates that there is a
+statistically significant difference between the proportions of each
+independent variable and the dependent variable.</p>
+<h2 id="associations">Associations</h2>
+<p>Table 4 outlines the association of emissions category by fuel type and
+other characteristics: primary fuel type, vehicle type, and transmission
+type. The CO~2~ emissions are converted into categorical data to show
+that our dependent variable is relative to some of the independent
+variables in the model. The dependent variable in this table is the
+CO~2~ emission levels, while the independent variables are the primary
+fuel type, vehicle type, and transmission type. These characteristics
+have also acquired a p-value of less than .0001, which indicates a
+statistically significant association concerning the different levels of
+emission categories. Of the total population, 68.42% of vehicles fell
+under the standard category, and 45.7% of all vehicle types are
+classified as unknown. Additionally, as mentioned previously, 70% of
+vehicles are automatic transmission types. In short, unknown vehicles
+contribute the most among all vehicle types and are statistically
+significant with high associations to emissions, while regular gasoline
+has the highest association relative to all emission levels.</p>
+<h1 id="results">Results</h1>
+<h2 id="probability-density-function">Probability Density Function</h2>
+<p>A normal probability density function was determined for the CO~2~
+emissions, as seen in (2). Additionally, the independent variable in the
+density function is CO~2~ tailpipe emissions. When considering the
+practicality of this density function, it was determined that any value
+less than 0 CO~2~ emissions would result in zero chance since vehicles
+having a negative carbon dioxide emission is impossible because a
+vehicle cannot have negative carbon dioxide emissions based on current
+technology. In addition, the probability distribution exhibits a normal
+bell-shaped curve which allows the density function to predict what
+percentage of CO~2~ emissions will fall at a specific value, as shown in
+Figure 2. For research purposes, the data was forced into a normal curve
+by creating a modified number of bins to get the data points as close as
+possible to a normal distribution. The center of the curve for the CO~2~
+probability distribution function with a frequency histogram has an
+approximate value of 450 grams per mile, similar to the mean value of
+465.54 calculated through SAS. Due to the normally distributed histogram
+and probability chart, the density function predicts 95% of CO~2~
+emissions values to fall between 225.75 and 705.27 by calculating two
+standard deviations above and below the mean as shown in Figure #.</p>
+<p>$${PDF}_{CO2} = f(x;\mu = 465.538,\sigma = 119.88) = \left{ \begin{matrix}
+\frac{1}{\lbrack\left( \sqrt{2\pi} \right)(119.88)\rbrack}e^{- {({x - 465.538)}^{2}/\lbrack(2)({119.88)\rbrack}^{2}}},\ \ &amp; x &lt; 0 \
+0,\ \ &amp; x \geq 0 \
+\end{matrix} \right.\ \ $$</p>
+<p>(2)</p>
+<p>Where ${PDF}_{CO2}$ = probability distribution function of tailpipe
+CO~2~ emissions</p>
+<p>μ = population mean</p>
+<p>σ = population standard deviation</p>
+<h2 id="heading-1"></h2>
+<h2 id="pearson-correlation-coefficients">Pearson Correlation Coefficients</h2>
+<p>Table 5 displayed the Pearson correlation coefficients (r) for all the
+vehicle characteristics in the data set. The correlation values resulted
+in a p-value &lt;0.0001, indicating that the variable was statistically
+significant at a confidence level of 95%. With respect to statistical
+correlation, absolute values of r &gt; .75 describe a strong relationship
+while absolute values of .25 &lt; r &lt; .50 indicate a weak relationship
+and r &lt;.25 values are considered very weak relationships (Statology,
+2020). The strongest positive correlation relative to CO~2~ emissions
+was the annual petroleum consumption in barrels for fuel type (.9885),
+which supports the notion that a higher amount of CO~2~ is associated
+with higher levels of annual petroleum consumption. The strongest
+negative correlation was the combined MPG (-.9184), indicating a strong
+negative linear correlation concerning CO~2~ emissions. The inverse
+correlation shows that the amount of CO~2~ emitted tends to decrease as
+the value of MPG increases. Other variables with relatively strong
+positive correlations concerning CO~2~ tailpipe emissions include the
+derived value based on classified CO~2~ tailpipe emissions (.8894),
+engine displacement in liters (.7954), and the number of engine
+cylinders (.7438).</p>
+<p>From the Pearson correlation table, two variables exhibit weak
+correlations and two variables that exhibit a very weak relationship to
+the CO~2~ tailpipe emission, shown in Table #. The two weak correlations
+are vehicle volume (-.4342) and vehicle type (-.3636). Very weak
+statistical correlations include make ID (-.2157) and primary fuel type
+(-.1128) being the weakest correlated across all variables. Note that
+negative correlation values indicate an inverse relationship, as
+previously mentioned. Furthermore, statistical correlations of make ID
+and primary fuel type are also weak across all other variables. Thus,
+the weak correlations support the notion that the nominal and ordinal
+variables tend to impact the CO~2~ tailpipe emissions the least among
+other data types based on the Pearson Correlation Coefficient Table.</p>
+<h2 id="pearsons-chi-square-test">Pearson&rsquo;s Chi-Square Test</h2>
+<p>Emissions category and vehicle types had a correlation value of .3054,
+indicating a weak correlation indicated Table. Therefore, a chi-squared
+test for independence or homogeneity was necessary to investigate
+further the significance of the association between the association of
+vehicle types relative to the emissions category. The null hypothesis of
+homogeneity states that the proportion of the emissions category is the
+same for each population (Devore, 2016). In contrast, the alternative
+hypothesis states that the emissions categories are not homogeneously
+relative to vehicle types. A chi-squared test of independence focuses on
+the lack of association between the variables. Therefore, emissions
+category and vehicle type are independent of one another is the null
+hypothesis for independence. Furthermore, the chi-squared homogeneity
+test was performed for this study, resulting in the null hypothesis
+claiming that emissions categories are homogenous with respect to the
+four vehicle types.</p>
+<p>In addition, a table of expected values, as shown in Table 7, was also
+created in order to perform chi-squared testing. Category combination
+was unnecessary because all cells in the expected count table are at
+least five, allowing the chi-squared test for homogeneity to be applied
+safely. As indicated in Table 8, the chi-squared test resulted in a
+total value of 9,406.17, and with 15 degrees of freedom, the p-value was
+less than .001. With a p-value this small, the null hypothesis would be
+rejected at any practicable significance level. Therefore, the
+hypothesis of homogeneity is rejected in favor of the alternative
+hypothesis that the distribution of reason for nonconformity is
+different for the emission categories.</p>
+<p>On the other hand, an immense sample set can potentially cause inflated
+chip-squared statistics and decrease the p-value, and in this case, the
+total chi-squared value was so large that the p-value could be
+incorrectly low. The most notable example in the dataset is that 173
+gross polluters were expected, but only one was observed. Therefore, a
+secondary analysis is needed to review the validity of the chi-squared
+test further.</p>
+<h2 id="multicollinearity">Multicollinearity</h2>
+<p>Multicollinearity issues can arise when two or more predictor
+(explanatory) variables in a multiple regression model are related to
+each other and likewise related to the response variable (Akinwande et
+al., 2015). In other words, multicollinearity can occur when independent
+variables in a regression model are correlated. As such, Table 5
+identifies predictor variables that are strongly correlated with each
+other (r &lt; |.75|): emissions category with petroleum consumption
+(.8791) and combined mpg (-.8415), engine displacement with petroleum
+consumption (.7843), MPG (-.7327) and cylinders (.9406), volume with
+vehicle type (.7418), and cylinders with petroleum consumption (.7438).
+However, strongly correlated independent variables do not always imply
+that there will be a significant estimation problem. In other words,
+correlation is not collinearity but instead an indication of potential
+multicollinearity. Therefore, further investigation is required before
+removing the variables.</p>
+<p>In addition, the initially planned model includes categorical data
+non-indicator variables, which were assigned numerical IDs. The model
+contains categorical predictor variables: make ID, vehicle type,
+emissions category, transmission type, and primary fuel type. Converting
+categorical data to numerical IDs is not sufficient enough to be used in
+regression models. SAS converted the categorical data into discrete
+numbers. Therefore, the residuals, the vertical deviation from the
+estimated regression line, treat the data as discrete rather than
+categorical data. Instead, the categorical data should be in values of 0
+and 1 or as dummy variables. The model&rsquo;s categorical data as numerical
+IDs that increase is incorrect because it imposes an ordering on the
+categories. Categorical variables with C possible categories into a
+multiple regression model require the use of C-1 indicator variables
+which are not present in the models provided (Devore, 2016).</p>
+<h2 id="initial-regression-model">Initial Regression Model</h2>
+<p>Based on (1), a multi regression model was made (3). The response, or
+dependent variable, was CO~2~ emissions, while the predictor, or
+explanatory or independent variables, are petroleum consumption in,
+combined miles-per-gallon, vehicle manufacturer, engine displacement,
+engine cylinders, and combined luggage and passenger volume. The
+originally planned model used 42,917 samples and yielded a dependent
+mean of 465.54 and an adjusted R^2^ value of .9828; the R^2^ value
+refers to the variation in CO~2~ emissions by the variance of the
+independent variables. However, this does not necessarily represent a
+near-perfect model and instead raises over-fitting concerns.
+Over-fitting refers to situations where the model fails to generalize
+estimates outside its own dataset (Rigg &amp; Hankins, 2015). Thus, having a
+very high R^2^ value should be investigated further to see if the
+predictor variables may not necessarily belong.</p>
+<p>$${CO}<em>{2}Tailpipegpm = 79.5534 + 20.7437(barrels08) - 2.5356(combo08) + 0.0033\left( make</em>{id} \right) + 2.1722(displ) + 2.2629(cylinders) - .0078(volume) - 0.4136(vehtype) + 12.8766(emissionscat) + 0.7799\left( transtype_{id} \right) + 2.9902(prifueltype) + \in$$</p>
+<p>(3)</p>
+<p>Moreover, the original model contained variables with high variance
+inflation factors (VIF) which &ldquo;measures how much multicollinearity has
+increased the variance of a slope estimate&rdquo; (Stine, 2011). The VIF
+values between five and ten are typically used to indicate problems with
+multicollinearity (Tay, 2017). Using this threshold, high VIFs in the
+model were include annual petroleum consumption (9.34), combined MPG
+(6.08), engine displacement (7.29), and cylinders (6.47). However,
+further investigation of these variables was not determined to have a
+severe enough impact on removing the variables for the final model. To
+summarize, the initially planned model can predict data based on that
+data set. However, it would not predict anything else about the other
+data sets due to the issues surrounding categorical indicator variables,
+overfitting, and multicollinearity issues.</p>
+<h2 id="final-regression-model">Final Regression Model</h2>
+<p>Categorical non-indicator variables (make ID, vehicle type, emissions
+category, transmission type, and primary fuel type) were removed for the
+final model due to multicollinearity concerns. In addition, the model
+removes 19,903 observations due to null values in order to provide the
+most accurate model possible given the dataset from FuelEconomy.gov.
+Missing volume samples (19,731), all associated with unknown vehicle
+types, accounted for the majority (99.1%) of the null observations. (4)
+represents the final model to predict tailpipe CO~2~ emissions with the
+following predictor variables: annual petroleum consumption (barrels08),
+combined MPG (combo08), engine displacement (displ), cylinders, and
+volume. The model was determined to have an adjusted R^2 value of
+0.9886, suggesting 98.86% of the variance in CO~2~ emissions in relation
+to the predictor variables. The dependent mean is 415.94, which is lower
+than the original planned model&rsquo;s dependent mean (465.54). The model
+also resulted in a p-value less than .0001 with 5 degrees of freedom, as
+opposed to 10 degrees of freedom in the initial model. Therefore, the
+final model had a lower variance coefficient, lower error value, and no
+categorical variables indicating a more accurate model when comparing
+both models.</p>
+<p>$${CO}_{2}Tailpipegpm = 60.2159 + 24.4364(barrels08) - 1.2573(combo08) + 1.5163(displ) + 0.5106(cylinders) + 0.0008(volume)$$</p>
+<p>(4)</p>
+<p>Although, reducing the variable count in the regression model does not
+entirely remove the multicollinearity concerns. The new model
+statistically investigates the association of tailpipe carbon dioxide
+emissions to annual consumption in barrels after controlling combined
+miles per gallon, engine displacement, engine cylinders, and volume.
+Table 5 reveals a multicollinearity issue within the final model due to
+the strong inverse correlation of .9050 between petroleum consumption
+and combined MPG, causing variable inflation. Intuitively, this makes
+sense in practical applications where fuel-efficient cars with lower
+miles per gallon will probably consume less petroleum.</p>
+<h1 id="discussion">Discussion</h1>
+<h2 id="hypothesis">Hypothesis</h2>
+<p>According to the final model, the model's intercept was 60.31 grams per
+mile of tailpipe CO~2~ emissions. The coefficients for petroleum
+consumption, combined miles per gallon, engine displacement, cylinders,
+and volume are respectively 24.43, -1.257, 1.51, 0.51, and 0.00075. All
+predictor variables resulted in p-values &lt;.0001 except volume, which
+was .6461. The relatively high p-value from volume could be from
+removing 19,731 samples which made up 45.97% of all samples (42,917)
+used in the dataset.</p>
+<p>The objective of this analysis is to statistically investigate the
+association of tailpipe carbon dioxide emissions in grams per mile to
+annual primary-fuel petroleum consumption in barrels after controlling
+for combined miles-per-gallon for the primary fuel type, vehicle
+manufacturer, make, model, engine displacement, engine cylinders,
+transmission type, and combined luggage and passenger volume in cubic
+feet. This study's null hypothesis is that there are no correlations
+between CO~2~ tailpipe emissions and petroleum consumption; in other
+words, vehicle characteristics do not impact CO~2~ emissions. In
+contrast, the alternative hypothesis suggests a relationship between the
+independent variables from the vehicle characteristics and CO~2~
+emissions.</p>
+<p>The final model had five degrees of freedom and an F value of 402,618,
+resulting in a p-value less than .0001 with a confidence level of 95%.
+Thus, the null hypothesis is rejected, and the alternative hypothesis is
+accepted. We can further conclude that there is a significant
+association between CO~2~ emissions and annual petroleum consumption. In
+other words, for every 1 barrel of annual petroleum consumed, tailpipe
+CO~2~ emissions are expected to increase by 24.43 grams per mile if all
+other predictor variables were fixed. However, by accepting the
+alternative hypothesis, there is a risk of having a Type I error if the
+null hypothesis should have been accepted instead. In conclusion, the
+final multiple regression model proved to explain tailpipe CO~2~
+emission variance adequately.</p>
+<h2 id="strengths-and-limitations">Strengths and Limitations</h2>
+<p>The research project has a voluminous data set of 43,177; this can be
+seen as a strength because of the enormous magnitude of sample points
+which can indicate a good representation of the population. By having a
+large sample size, we can move closer to having a normal distribution in
+the dataset. Additionally, larger samples are more robust to outliers
+and provide a more accurate population parameter estimate. Furthermore,
+another strength of the study is that it is continuously updated to
+provide more accurate results. For example, FuelEconomy.gov mentions
+that the sample set contains the MPG for all 1985-2997 models, and some
+2011-2016 model years have been updated. Similarly, the fuel prices for
+gasoline and diesel are updated every week. However, having such a large
+sample size can cause some problems due to missing information.
+According to Devore (2016), large sample sizes can amplify the
+differences in estimated P values, causing a potential problem when
+analyzing the values in conjunction with the null hypothesis.</p>
+<p>Moreover, the data notes in the excel file highlight potential data
+limitation issues if the whole data set is used, which can impact the
+precision and accuracy when modeling the data. For example, one
+limitation would be the interior volume dimensions since the volume
+dimensions are not required for two-seater passenger cars or any vehicle
+classified as a truck. From the data provided by fuel economy, there are
+19,731 data points with a volume of 0. Another limitation is the number
+of data points (261) with no cylinder values, and that unrounded MPG
+values are not available for some vehicles. Lastly, according to
+FuelEconomy.gov, the tailpipe CO~2~ is based on EPA testing for model
+years 2013 and beyond and using an EPA emission factor of -1 (not
+available) for previous model years. Thus, if the whole dataset
+(43,177), the limitations far exceed the strengths due to missing data
+values.</p>
+<h2 id="future-research">Future Research</h2>
+<p>Future research should consider the potential effects of these
+limitations more carefully. One example of avoiding a limitation is
+creating a dataset that uses the same EPA testing across all
+observations. Future research should also examine strategically better
+sampling methods to avoid potential bias. For example, the 16-cylinder
+vehicles were exclusive to 14 Bugatti&rsquo;s only. Therefore, providing more
+samples of other supercars can be helpful when including 16-cylinder
+vehicles in the dataset. In addition, a different model can be created
+to predict CO~2~ tailpipe emissions of two-seater passenger cars where
+the interior volume dimensions were provided, resulting in null values
+skewing the data points. Similarly could be done to any vehicle
+classified as trucks: vans, pickups, special purpose vehicles, minivan,
+and sport utility vehicles. Moreover, future studies should also further
+develop and confirm these initial findings with more samples to provide
+manufacturers with a model of vehicle characteristics to meet their
+reduced CO2 emission goals.</p>
+<h1 id="heading-2"></h1>
+<h1 id="references">References</h1>
+<p>Akinwande, M. O., Dikko, H. G., &amp; Samson, A. (2015). Variance Inflation
+Factor: As a Condition for the Inclusion of Suppressor Variable(s) in
+Regression Analysis. <em>Open Journal of Statistics</em>, <em>05</em>(07), 754&ndash;767.
+<a href="https://doi.org/10.4236/ojs.2015.57075">https://doi.org/10.4236/ojs.2015.57075</a></p>
+<p>B.L.Salvi, B. L. (1993). Alternative fuels for transportation vehicles:
+A technical review. <em>ScienceDirect</em>. <a href="https://doi.org/10.4271/931816">https://doi.org/10.4271/931816</a></p>
+<p>Devore, J. L. (2016). <em>Probability and statistics for engineering and
+the sciences</em>. Nelson.</p>
+<p>Environmental Protection Agency. (2021, April 14). <em>Sources of
+Greenhouse Gas Emissions</em>. EPA.
+<a href="https://www.epa.gov/ghgemissions/sources-greenhouse-gas-emissions#">https://www.epa.gov/ghgemissions/sources-greenhouse-gas-emissions#</a>:~:text=In%202019%2C%20greenhouse%20gas%20emissions,of%20U.S.%20greenhouse%20gas%20emissions).</p>
+<p><em>The official U.S. government source for fuel economy information.</em> Fuel
+Economy. (n.d.). <a href="https://fueleconomy.gov/">https://fueleconomy.gov/</a>.</p>
+<p>Rigg, J., &amp; Hankins, M. (2015). Research on Modeling Methods Study.
+<em>Value in Health</em>.</p>
+<p>Tay, R. J. (2017). Correlation, Variance Inflation and Multicollinearity
+in Regression Models. <em>Variance Inflation Factor: As a Condition for the
+Inclusion of Suppressor Variable(s) in Regression Analysis</em>.
+<a href="https://doi.org/10.1063/1.4823947">https://doi.org/10.1063/1.4823947</a></p>
+<p>Zach. (2021, April 27). <em>What is Considered to Be a &quot;Strong&quot;
+Correlation?</em> Statology.
+<a href="https://www.statology.org/what-is-a-strong-correlation/">https://www.statology.org/what-is-a-strong-correlation/</a>.</p>
+<h1 id="appendix">Appendix</h1>
+<p><strong>Figure 1</strong></p>
+<p><em>Tailpipe CO2 Emissions in Grams Per Mile Relative to Engine Cylinders</em></p>
+<p><img src="media/image1.png" alt="Chart, box and whisker chart Description automaticallygenerated">{width=&ldquo;6.5in&rdquo;
+height=&ldquo;3.8513888888888888in&rdquo;}</p>
+<p><em>Note:</em> A box and whisker plot was made to investigate engine cylinders
+relative to carbon dioxide emissions. From &ldquo;Carbon Dioxide Emissions and
+Personal Vehicle Choices,&rdquo; by E. Belekanich, 2020.</p>
+<p><strong>Figure 2</strong></p>
+<p><em>Probability Density Function of Carbon Dioxide Tailpipe Emissions</em></p>
+<p><img src="media/image2.png" alt="Chart, histogram Description automaticallygenerated">{width=&ldquo;6.5in&rdquo;
+height=&ldquo;4.8694444444444445in&rdquo;}</p>
+<p><em>Note:</em> The number of bins was modified in order to provide a normal
+distributed curve</p>
+<p><strong>Table 1</strong></p>
+<p><em>Description of each research variable</em></p>
+<hr>
+<p>Research Fields  Field                                                 
+Description</p>
+<hr>
+<p>co2TailpipeGpm   tailpipe CO2 in                                   <br>
+grams/mile</p>
+<p>barrels08        annual petroleum                                  <br>
+consumption in                                    <br>
+barrels</p>
+<p>comb08           combined MPG                                      <br>
+for fuel Type</p>
+<p>make_id          manufacturer                                      <br>
+(division)                                        <br>
+assigned ID</p>
+<p>displ            engine                                            <br>
+displacement in                                   <br>
+liters</p>
+<p>cylinders        engine cylinders</p>
+<p>volume           vehicle volume                                    <br>
+(cubic feet) =                                    <br>
+hlv + hpv +                                       <br>
+lv2 + lv4 +                                       <br>
+pv2 + pv4</p>
+<p>vehtype          categorized                                       <br>
+vehicle type                                      <br>
+(Hatchback |                                     <br>
+2-Door Passenger                                  <br>
+| 4-Door                                         <br>
+Passenger |                                      <br>
+Other)</p>
+<p>emissionscat     derived value                                     <br>
+based on                                          <br>
+classified CO2                                    <br>
+tailpipe                                          <br>
+emissions in                                      <br>
+grams per mile</p>
+<p>transtype_id     transmission                                      <br>
+type</p>
+<h2 id="type-based">prifueltype      primary fuel                                          
+type based</h2>
+<p><strong>Table 2</strong></p>
+<p><em>Descriptive Statistics for Continuous Vehicle Characteristics</em></p>
+<hr>
+<p>Variable         N        Mean       Std Dev    Minimum   Maximum    Range</p>
+<hr>
+<p>co2TailpipeGpm   42917    465.5412   119.8828   22        1270       1248</p>
+<p>barrels08        42917    17.2547    4.48843    0.06      47.08714   47.02714</p>
+<p>displ            42917    3.28686    1.35693    0.6       8.4        7.8</p>
+<h2 id="volume-----------42917----6688492---6912347---0---------538--------538">volume           42917    66.88492   69.12347   0         538        538</h2>
+<p><strong>Table 3</strong></p>
+<p><em>Characteristics of 43,177 Sample Vehicle Models by Primary Fuel Type</em></p>
+<hr>
+<p><strong>Characteristic</strong>   <strong>Population</strong>          <strong>Premium           <strong>Midgrade          <strong>Regular           <strong>Diesel</strong>          <strong>Natural          <strong>Electricity</strong><br>
+Gasoline</strong>          Gasoline</strong>          Gasoline</strong>                              Gas</strong></p>
+<hr>
+<pre><code>                   N                \%     n            \%     n            \%     n            \%     n            \%     n           \%     n                 \%
+
+                   43177            100    12,801       29.6   130          0.3    28733        66.5   1,196        2.8    60          0.1    257               0.6
+</code></pre>
+<p><em>Vehicle Type</em></p>
+<p>Unknown (0)          19730            45.7   3491         27.3   90           69.2   15346        53.4   685          57.3   34          56.7   84                33</p>
+<p>Hatchback (1)        5070             11.7   1313         10.3   0            0      3535         12.3   115          9.6    2           3.3    105               41</p>
+<p>Passenger 2-Door (2) 6394             14.8   3157         24.7   12           9.2    3120         10.9   103          8.6    1           1.7    1                 0.4</p>
+<p>Passenger 4-Door (3) 11983            27.8   4840         37.8   28           21.5   6732         23.4   293          24.5   23          38.3   67                26</p>
+<p><em>Transmission Type</em></p>
+<p>Automatic (1)        30210            70     9411         73.5   130          100    19588        68.2   773          64.6   60          100    248               100</p>
+<h2 id="manual-2-----------12956------------30-----3390---------265---0------------0------9143---------318---423----------354---0-----------0------0-----------------0">Manual (2)           12956            30     3390         26.5   0            0      9143         31.8   423          35.4   0           0      0                 0</h2>
+<p><em>Note:</em> Table 3 indicates the bivariate frequencies with p-values
+&lt;.0001 based on the Pearson chi-square test of association</p>
+<p><strong>Table 4</strong></p>
+<p><em>Association of Emissions Category by Fuel Type and Other
+Characteristics</em></p>
+<hr>
+<p>** **               <strong>Population</strong>             <strong>Ultra-Low              <strong>Very-Low              <strong>Low                     <strong>Standard</strong>               <strong>Polluter</strong>              <strong>Gross      <br>
+Emission</strong>               Emission</strong>              Emission</strong>                                                                     Polluter</strong></p>
+<hr>
+<pre><code>                  ***N*(%)**                 ***n*(%)**               ***n*(%)**              ***n*(%)**                ***n*(%)**                 ***n*(%)**                ***n*(%)**      
+</code></pre>
+<p><strong>Variable</strong>        <strong>(N=43,177)</strong>             <strong>(n=321)</strong>              <strong>(n=384)</strong>             <strong>(n=5,556)</strong>             <strong>(n=29,543)</strong>             <strong>(n=5,899)</strong>             <strong>(n=1,474)</strong></p>
+<p>[Primary Fuel                                                                                                                                                                               <br>
+Type]{.underline}</p>
+<p>Premium Gasoline    12,801           (29.6%)   24            (7.5%)     70            (18.2%)   1,169           (21.0%)   9,798            (33.2%)   1,262           (21.4%)   478             (32.4%)
+(1)</p>
+<p>Midgrade Gasoline   130              (0.3%)    0             (0.0%)     0             (0.0%)    0               (0.0%)    124              (0.4%)    6               (0.1%)    0               (0.0%)
+(2)</p>
+<p>Regular Gasoline    28,733           (66.5%)   40            (12.5%)    311           (81.0%)   4,066           (73.2%)   18,971           (64.2%)   4,358           (73.9%)   987             (67.0%)
+(3)</p>
+<p>Diesel (4)          1,196            (2.8%)    0             (0.0%)     0             (0.0%)    303             (5.5%)    629              (2.1%)    259             (4.4%)    5               (0.3%)</p>
+<p>Natural Gas (5)     60               (0.1%)    0             (0.0%)     3             (0.8%)    18              (0.3%)    21               (0.1%)    14              (0.2%)    4               (0.3%)</p>
+<p>Electricity (6)     257              (0.6%)    257           (80.1%)    0             (0.0%)    0               (0.0%)    0                (0.0%)    0               (0.0%)    0               (0.0%)</p>
+<p>[Vehicle                                                                                                                                                                                    <br>
+Type]{.underline}</p>
+<p>Unknown (0)         19,730           (45.7%)   91            (28.3%)    50            (13.0%)   739             (13.3%)   12,579           (42.6%)   5,119           (86.8%)   1,152           (78.2%)</p>
+<p>Hatchback (1)       5,070            (11.7%)   122           (38.0%)    128           (33.3%)   1,820           (32.8%)   2,952            (10.0%)   47              (0.8%)    1               (0.1%)</p>
+<p>Passenger 2-Door    6,394            (14.8%)   7             (2.2%)     11            (2.9%)    703             (12.7%)   5,193            (17.6%)   339             (5.7%)    141             (9.6%)
+(2)</p>
+<p>Passenger 4-Door    11,983           (27.8%)   101           (31.5%)    195           (50.8%)   2,294           (41.3%)   8,819            (29.9%)   394             (6.7%)    180             (12.2%)
+(3)</p>
+<p>[Transmission                                                                                                                                                                               <br>
+Type]{.underline}</p>
+<p>Automatic (1)       30,210           (70.0%)   312           (100.0%)   301           (78.4%)   3,202           (57.6%)   20,730           (70.2%)   4,557           (77.3%)   1,108           (75.2%)</p>
+<h2 id="manual-2----------12956-----------300---0-------------00-----83------------216---2354-----------424---8813------------298---1341-----------227---365-------------248">Manual (2)          12,956           (30.0%)   0             (0.0%)     83            (21.6%)   2,354           (42.4%)   8,813            (29.8%)   1,341           (22.7%)   365             (24.8%)</h2>
+<p><em>Note</em>: All p-values were less than .0001 based on Pearson chi-square
+test of association</p>
+<p><strong>Table 5</strong></p>
+<p><em>Pearson Correlation Coefficients for 42,917 Observations</em></p>
+<hr>
+<p>** **                <strong>co2Tailpipe</strong>   <strong>barrels08</strong>   <strong>comb08</strong>   <strong>make</strong>   <strong>displ</strong>   <strong>cylinder</strong>   <strong>volume</strong>   <strong>vehtype</strong>   <strong>emissionscat</strong>   <strong>transtype_</strong></p>
+<hr>
+<p><strong>co2TailpipeGpm</strong>   1.0000            .9885           (.9184)      (.2157)    .7954       .7438          (.4323)      (.3626)       .8894              (.1128)</p>
+<p><strong>barrels08</strong>        .9885             1.0000          (.9050)      (.2117)    .7843       .7337          (.4266)      (.3580)       .8791              (.1084)</p>
+<p><strong>comb08</strong>           (.9184)           (.9050)         1.0000       .2072      (.7327)     (.6863)        .4161        .3313         (.8415)            .1234</p>
+<p><strong>make_id</strong>          (.2157)           (.2117)         .2072        1.0000     (.2823)     (.2670)        .1165        .0940         (.1755)            .0710</p>
+<p><strong>displ</strong>            .7954             .7843           (.7327)      (.2823)    1.0000      .9046          (.3628)      (.2631)       .6703              (.2149)</p>
+<p><strong>cylinders</strong>        .7438             .7337           (.6863)      (.2670)    .9046       1.0000         (.2648)      (.1524)       .6185              (.2181)</p>
+<p><strong>volume</strong>           (.4323)           (.4266)         .4161        .1165      (.3628)     (.2648)        1.0000       .7418         (.3627)            .0498</p>
+<p><strong>vehtype</strong>          (.3626)           (.3580)         .3313        .0940      (.2631)     (.1524)        .7418        1.0000        (.3054)            (.0340)</p>
+<p><strong>emissionscat</strong>     .8894             .8791           (.8415)      (.1755)    .6703       .6185          (.3627)      (.3054)       1.0000             (.0874)</p>
+<h2 id="prifueltype------1128-----------1084---------1234--------0710------2149-----2181--------0498--------0340-------0874------------10000"><strong>prifueltype</strong>      (.1128)           (.1084)         .1234        .0710      (.2149)     (.2181)        .0498        (.0340)       (.0874)            1.0000</h2>
+<p><em>Note:</em> All correlation values in a p-value &lt;.0001</p>
+<p><strong>Table 6</strong></p>
+<p><em>Two-way Contingency Table of Vehicle Type and Emissions Category</em></p>
+<hr>
+<p><strong><em>Frequency   <strong>Hatchback</strong>   <em><em>Passenger   <strong>Passenger   <strong>Unknown</strong>   <strong>Total</strong>
+Table</strong></em>                       2-Door</em></em>      4-Door</strong></p>
+<hr>
+<p><strong>GROSS        1.00            141.00        180.00        1,152.00      1,474.00
+POLLUTER</strong></p>
+<p><strong>Low          1,820.00        703.00        2,294.00      739.00        5,556.00
+Emission</strong></p>
+<p><strong>Polluter</strong>   47.00           339.00        394.00        5,119.00      5,899.00</p>
+<p><strong>Standard</strong>   2,952.00        5,193.00      8,819.00      12,579.00     29,543.00</p>
+<p><strong>Ultra-Low    122.00          7.00          101.00        91.00         321.00
+Emission</strong></p>
+<p><strong>Very Low     128.00          11.00         195.00        50.00         384.00
+Emission</strong></p>
+<h2 id="total------507000--------639400------1198300-----1973000-----4317700"><strong>Total</strong>      5,070.00        6,394.00      11,983.00     19,730.00     43,177.00</h2>
+<p><strong>Table 7</strong></p>
+<p><em>Expected Value Table for Vehicle Types and Emission Category</em></p>
+<hr>
+<p><strong><em>Expected     <strong>Hatchback</strong>   <em><em>Passenger    <strong>Passenger    <strong>Unknown</strong>
+Value Table</strong></em>                  2-Door</em></em>       4-Door</strong></p>
+<hr>
+<p><strong>GROSS         173.08          218.28         409.08         673.55
+POLLUTER</strong></p>
+<p><strong>Low           652.41          822.78         1,541.97       2,538.85
+Emission</strong></p>
+<p><strong>Polluter</strong>    692.68          873.57         1,637.16       2,695.58</p>
+<p><strong>Standard</strong>    3,469.05        4,374.97       8,199.13       13,499.86</p>
+<p><strong>Ultra-Low     37.69           47.54          89.09          146.68
+Emission</strong></p>
+<h2 id="emission"><strong>Very Low      45.09           56.87          106.57         175.47
+Emission</strong></h2>
+<p><strong>Table 8</strong></p>
+<p><em>Chi-Squared Table for Emission Category and Vehicle Type</em></p>
+<hr>
+<p><strong><em>Chisq       <strong>Hatchback</strong>   <em><em>Passenger   <strong>Passenger   <strong>Unknown</strong>   <strong>Total</strong>
+Table</strong></em>                       2-Door</em></em>      4-Door</strong></p>
+<hr>
+<p><strong>GROSS        171.09          27.36         128.28        339.86        666.59
+POLLUTER</strong></p>
+<p><strong>Low          2,089.61        17.44         366.77        1,275.95      3,749.78
+Emission</strong></p>
+<p><strong>Polluter</strong>   601.87          327.12        943.98        2,178.73      4,051.70</p>
+<p><strong>Standard</strong>   77.06           152.96        46.86         62.81         339.70</p>
+<p><strong>Ultra-Low    188.57          34.57         1.59          21.14         245.87
+Emission</strong></p>
+<p><strong>Very Low     152.45          36.99         73.37         89.72         352.53
+Emission</strong></p>
+<h2 id="total------------------------------------------------------------940617"><strong>Total</strong>      -              -            -            -            9,406.17</h2>
+<p><em>Note:</em> The p-value of the table resulted in less than .001</p>
+<p><img src="media/image3.png" alt="Text Description automaticallygenerated">{width=&ldquo;4.992361111111111in&rdquo; height=&ldquo;6.5in&rdquo;}</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="https://aminfesharaki97.github.io/Amin_Portfolio/tags/excel" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Excel</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://aminfesharaki97.github.io/Amin_Portfolio" >
+    &copy;  Amin Fesharaki 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+    <a href="https://www.linkedin.com/in/aminfesh" target="_blank" class="LinkedIn ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+    <a href="https://github.com/aminfesharaki97" target="_blank" class="Github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
